@@ -12,14 +12,18 @@
                 <p class="fst-italic m-0">Type: {{$item->type}}</p>
                 <p class="fst-italic m-0">Weight: {{$item->weight}}</p>
                 <p class="fst-italic m-0">Cost: {{$item->cost}}</p>
-                <div>
+                <div class="d-flex justify-content-center gap-2">
                     <a href="{{route('items.edit', $item->id)}}" class="btn btn-primary">Edit</a>
+                    <form action="{{route('items.destroy', $item->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button id="confirm-delete" class="btn btn-danger" data-item-title="{{$item->name}}"
+                            type="submit">Delete</button>
+                    </form>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-
+@include('items.partials.modal_delete')
 @endsection
