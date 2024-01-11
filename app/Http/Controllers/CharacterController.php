@@ -14,7 +14,7 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
-        return view('character.index', compact('characters'));
+        return view('characters.index', compact('characters'));
     }
 
     /**
@@ -22,7 +22,6 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -38,7 +37,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        return view('character.show', compact('character'));
+        return view('characters.show', compact('character'));
     }
 
     /**
