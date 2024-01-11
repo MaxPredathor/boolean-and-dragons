@@ -19,5 +19,5 @@
         <div markdown="1">{{ $type->desc }}</div>
     </div>
 
-    @include('partials.modal_delete_type')
+    @include('partials.modal_delete')
 @endsection

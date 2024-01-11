@@ -23,7 +23,7 @@ class StoreTypeRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'desc' => 'required|min:255',
+            'desc' => 'required|min:5',
         ];
     }
     public function messages()
@@ -32,7 +32,7 @@ class StoreTypeRequest extends FormRequest
         return [
             'name.required' => 'You have to insert a name',
             'desc.required' => 'You have to insert a description',
-            'desc.min' => 'this field must have at least :min characters',
+            'desc.min' => 'This field must have at least :min characters',
         ];
 
     }

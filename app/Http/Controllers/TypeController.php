@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
+use Illuminate\Support\Facades\Validator;
 
 class TypeController extends Controller
 {
@@ -58,10 +59,7 @@ class TypeController extends Controller
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $formdata = $request->validated();
-
-        $data = $request->all();
-        $type->name = $data['name'];
-        $type->desc = $data['desc'];
+        $type->fill($formdata);
         $type->update();
         return view('types.show', compact('type'));
     }

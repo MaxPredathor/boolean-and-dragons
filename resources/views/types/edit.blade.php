@@ -15,12 +15,12 @@
                         <input required value="{{ $type->name }}"
                             class="form-control my-1 @error('name') is-invalid @enderror" type="text" id="title"
                             name="name" placeholder="name">
-                        @error('title')
+                        @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <textarea required rows="8" class="form-control my-1 @error('series') is-invalid @enderror" type="text"
                             id="series" name="desc" placeholder="desc">{{ $type->desc }}</textarea>
-                        @error('series')
+                        @error('desc')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <button class="btn
