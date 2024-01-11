@@ -45,11 +45,11 @@
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('characters.index') }}" class="btn btn-primary">Return</a>
-                            <form action="{{ route('comics.destroy', $charecters->id) }}" class="d-inline" method="POST">
+                            <form action="{{ route('comics.destroy', $charecter->id) }}" class="d-inline" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger cancel-button"
-                                    data-item-title="{{ $characters->name }}">Delete</button>
+                                    data-item-title="{{ $character->name }}">Delete</button>
                             </form>
                             {{-- <button class="btn btn-primary position-static"> <a class="text-white"
                                     href="{{ route('characters.edit', $character->id) }}">Update</a>
