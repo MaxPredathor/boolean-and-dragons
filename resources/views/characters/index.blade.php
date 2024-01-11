@@ -21,13 +21,6 @@
                                 <p class="card-text">{{ substr($character->description, 0, 100) . '...' }}</p>
                                 <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">Show
                                     Details</a>
-                                {{-- <form action="{{ route('character.destroy', $character->id) }}" class="d-inline"
-                                method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger position-static cancel-button"
-                                    data-item-title="{{ $character->title }}">Delete</button>
-                            </form> --}}
                             </div>
                         </div>
                     </div>
