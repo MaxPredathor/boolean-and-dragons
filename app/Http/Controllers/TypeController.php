@@ -22,7 +22,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('types.create');
     }
 
     /**
@@ -30,7 +30,10 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $formdata = $request->validated();
+        $type = Type::create($formdata);
+
+        return to_route('types.index')->with('message', "The Type $type->name has been successfully created");
     }
 
     /**
@@ -38,7 +41,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        return view('types.show', compact('type'));
     }
 
     /**
@@ -46,7 +49,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('types.edit', compact('type'));
     }
 
     /**
@@ -54,7 +57,13 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $formdata = $request->validated();
+
+        $data = $request->all();
+        $type->name = $data['name'];
+        $type->desc = $data['desc'];
+        $type->update();
+        return view('types.show', compact('type'));
     }
 
     /**
@@ -62,6 +71,8 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return to_route('types.index')->with('message', "The comic $type->name has been successfully deleted");
+
     }
 }

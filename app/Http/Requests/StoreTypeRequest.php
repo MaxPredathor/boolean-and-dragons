@@ -11,7 +11,7 @@ class StoreTypeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,18 @@ class StoreTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'desc' => 'required|min:255',
         ];
+    }
+    public function messages()
+    {
+
+        return [
+            'name.required' => 'You have to insert a name',
+            'desc.required' => 'You have to insert a description',
+            'desc.min' => 'this field must have at least :min characters',
+        ];
+
     }
 }

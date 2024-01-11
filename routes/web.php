@@ -40,4 +40,4 @@ Route::fallback(function () {
     return redirect()->route('admin.dashboard');
 });
 
-Route::get('/types', [TypeController::class, 'index'])->name('types.index');
+Route::resource('types', TypeController::class);
