@@ -45,7 +45,7 @@
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('characters.index') }}" class="btn btn-primary">Return</a>
-                            <form action="{{ route('characters.destroy', $charecter->id) }}" class="d-inline"
+                            <form action="{{ route('characters.destroy', $character->id) }}" class="d-inline"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -101,4 +101,5 @@
 
         </section>
     </main>
+    @include('characters.partials.modal_delete')
 @endsection
