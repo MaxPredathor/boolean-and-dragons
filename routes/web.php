@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\Admin\ComicController;
 
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,5 @@ require __DIR__ . '/auth.php';
 Route::fallback(function () {
     return redirect()->route('admin.dashboard');
 });
+
+Route::get('/types', [TypeController::class, 'index'])->name('types.index');
