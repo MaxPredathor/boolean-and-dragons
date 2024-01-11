@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Mirkarus",
+        "description": "Every two months he travel all around the world to eat a bowl of soup",
+        "attack": 5,
+        "defence": 10,
+        "speed": 20,
+        "life": 100
+    },
+    {
+        "name": "Iaoco",
+        "description": "Every two hours he goes to the forest to hunt something",
+        "attack": 20,
+        "defence": 5,
+        "speed": 10,
+        "life": 100
+    },
+    {
+        "name": "Makkusu",
+        "description": "Every two weeks he takes a shower and cleans his teeth",
+        "attack": 20,
+        "defence": 10,
+        "speed": 5,
+        "life": 100
+    },
+    {
+        "name": "Vinicio Mio",
+        "description": "Every two minutes he drinks a glass of beer",
+        "attack": 5,
+        "defence": 20,
+        "speed": 10,
+        "life": 100
+    },
+    {
+        "name": "Ioderis",
+        "description": "Is drinking a juice",
+        "attack": 20,
+        "defence": 5,
+        "speed": 10,
+        "life": 100
+    },
+    {
+        "name": "Moonetta",
+        "description": "Every two year he goes to the moon",
+        "attack": 20,
+        "defence": 5,
+        "speed": 10,
+        "life": 100
+    },
+    {
+        "name": "Il Cappellaio Matto",
+        "description": "Every two minutes he reminds you his overwelming IQ",
+        "attack": 20,
+        "defence": 5,
+        "speed": 15,
+        "life": 100
+    },
+    {
+        "name": "Wordpress Raid Boss",
+        "description": "Every two minutes he loses money trading crypto",
+        "attack": 5,
+        "defence": 30,
+        "speed": 5,
+        "life": 100
+    }
+]
