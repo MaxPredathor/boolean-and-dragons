@@ -6,7 +6,7 @@ import.meta.glob(["../img/**", "../fonts/**"]);
 const buttons = document.querySelectorAll(".cancel-button");
 
 buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", (event) => {
         e.preventDefault();
         const dataTitle = button.getAttribute("data-item-title");
         const modal = new bootstrap.Modal("#deleteModal");
@@ -16,7 +16,7 @@ buttons.forEach((button) => {
         title.textContent = dataTitle;
 
         const confirm = document.querySelector(".confirm-cancel");
-        confirm.addEventListener("click", (e) => {
+        confirm.addEventListener("click", (event) => {
             document.getElementById("delete-form").submit();
         });
     });
