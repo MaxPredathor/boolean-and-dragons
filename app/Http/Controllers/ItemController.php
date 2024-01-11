@@ -14,8 +14,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $item = Item::all();
-        return view('items.index', compact('item'));
+        $items = Item::all();
+        return view('items.index', compact('items'));
     }
 
     /**
@@ -35,12 +35,14 @@ class ItemController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource.\
+     * 
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\View\View
      */
     public function show(Item $item)
     {
-        return view('items.show');
+        return view('items.show', compact('item'));
     }
 
     /**

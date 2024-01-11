@@ -20,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/items', [ItemController::class, 'index'])->name('index');
+Route::resource('items', ItemController::class);
 
-Route::get('/show', [ItemController::class, 'show'])->name('show');
+// Route::get('/items', [ItemController::class, 'index'])->name('index');
+
+// Route::get('/show/{id}', [ItemController::class, 'show'])->name('show');
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

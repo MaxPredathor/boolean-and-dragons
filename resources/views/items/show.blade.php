@@ -2,10 +2,17 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <h1 class="d-inline-block">Items Show</h1>
+    <a href="{{route('items.index')}}" class="btn btn-danger">Return</a>
+    <div class="row justify-content-center">
         <div class="col">
-            <h1>Items Show</h1>
-            <p>Show</p>
+            <div class="text-center border p-1">
+                <h2 class="fs-6 ">Name: {{$item->name}}</h2>
+                <p class="fst-italic m-0">Slug: {{$item->slug}}</p>
+                <p class="fst-italic m-0">Type: {{$item->type}}</p>
+                <p class="fst-italic m-0">Weight: {{$item->weight}}</p>
+                <p class="fst-italic m-0">Cost: {{$item->cost}}</p>
+            </div>
         </div>
     </div>
 </div>

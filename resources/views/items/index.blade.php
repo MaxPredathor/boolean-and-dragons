@@ -4,7 +4,7 @@
 <div class="container py-2">
     <div class="row g-3 justify-content-center">
         <h1>Items Index</h1>
-        @foreach($item as $data)
+        @foreach($items as $item)
         @include('items.partials.card')
         @endforeach
     </div>
