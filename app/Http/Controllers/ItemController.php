@@ -10,10 +10,11 @@ class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        //
+        return view('items.index');
     }
 
     /**
@@ -34,10 +35,11 @@ class ItemController extends Controller
 
     /**
      * Display the specified resource.
+     * @return \Illuminate\View\View
      */
     public function show(Item $item)
     {
-        //
+        return view('items.show');
     }
 
     /**
