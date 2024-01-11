@@ -62,6 +62,7 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
-        //
+        $character->delete();
+        return to_route('characters.index')->with('success', 'Character deleted successfully' . $character->name);
     }
 }
