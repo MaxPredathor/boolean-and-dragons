@@ -45,7 +45,8 @@
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('characters.index') }}" class="btn btn-primary">Return</a>
-                            <form action="{{ route('comics.destroy', $charecter->id) }}" class="d-inline" method="POST">
+                            <form action="{{ route('characters.destroy', $charecter->id) }}" class="d-inline"
+                                method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger cancel-button"
