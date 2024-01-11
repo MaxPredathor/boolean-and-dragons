@@ -12,7 +12,11 @@
                 <p class="fst-italic m-0">Type: {{$item->type}}</p>
                 <p class="fst-italic m-0">Weight: {{$item->weight}}</p>
                 <p class="fst-italic m-0">Cost: {{$item->cost}}</p>
+                <div>
+                    <a href="{{route('items.edit', $item->id)}}" class="btn btn-primary">Edit</a>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

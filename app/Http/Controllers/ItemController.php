@@ -51,10 +51,11 @@ class ItemController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @return \Illuminate\View\View
      */
     public function edit(Item $item)
     {
-        //
+        return view('items.edit', compact('item'));
     }
 
     /**
@@ -62,7 +63,10 @@ class ItemController extends Controller
      */
     public function update(UpdateItemRequest $request, Item $item)
     {
-        //
+        $data = $request->validated();
+        $item->fill($data);
+        $item->update();
+        return redirect()->route('items.show', $item->id);
     }
 
     /**
