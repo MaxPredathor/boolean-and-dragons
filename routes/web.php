@@ -39,4 +39,4 @@ Route::fallback(function () {
     return redirect()->route('admin.dashboard');
 });
 
-Route::get('/characters', [CharacterController::class, 'index'])->name('character.index');
+Route::resource('characters', CharacterController::class);
