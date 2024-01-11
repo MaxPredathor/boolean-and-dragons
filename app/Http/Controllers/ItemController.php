@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 
@@ -20,10 +21,11 @@ class ItemController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('items.create');
     }
 
     /**
@@ -31,7 +33,9 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        $item = $request->validated();
+        $newItem = Item::create($item);
+        return redirect()->route('items.show', $newItem->id);
     }
 
     /**
