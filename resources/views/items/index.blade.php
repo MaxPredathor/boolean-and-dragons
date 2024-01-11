@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Items Index</h1>
-            <p>Index</p>
-        </div>
+<div class="container py-2">
+    <div class="row g-3 justify-content-center">
+        <h1>Items Index</h1>
+        @foreach($item as $data)
+        @include('items.partials.card')
+        @endforeach
     </div>
 </div>
 
