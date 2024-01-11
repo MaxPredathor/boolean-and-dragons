@@ -2,7 +2,10 @@
 @section('content')
     <main>
         <section class="container">
-            <h1>Characters</h1>
+            <div>
+                <h1>Characters</h1>
+                <a href="{{ route('characters.create') }}">Create new Character</a>
+            </div>
             @if (session()->has('deleted'))
                 <div class="alert alert-success">
                     {{ session('deleted') }}
@@ -16,7 +19,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $character->name }}</h5>
                                 <p class="card-text">{{ substr($character->description, 0, 100) . '...' }}</p>
-                                <a href="{{ route('character.show', $character->id) }}" class="btn btn-primary">Show
+                                <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">Show
                                     Details</a>
                                 {{-- <form action="{{ route('character.destroy', $character->id) }}" class="d-inline"
                                 method="POST">

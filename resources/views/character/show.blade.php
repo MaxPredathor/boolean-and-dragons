@@ -66,7 +66,7 @@
                                 <h6 class="w-50">Type:</h6>
                                 <span class="fw-bold text-capitalize">{{ $comic['type'] }}</span>
                             </div>
-                            <form action="{{ route('comics.destroy', $comic->id) }}" class="d-inline" method="POST">
+                            <form action="{{ route('comics.destroy', $charecters->id) }}" class="d-inline" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger position-static cancel-button"
