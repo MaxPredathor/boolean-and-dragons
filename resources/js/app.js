@@ -4,6 +4,7 @@ import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**", "../fonts/**"]);
 
 const buttons = document.querySelectorAll(".cancel-button");
+
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
