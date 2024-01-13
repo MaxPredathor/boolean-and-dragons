@@ -14,28 +14,28 @@
                                 <div class="w-75 d-flex justify-content-between align-items-center">
                                     <div class="px-5">
                                         <div>
-                                            <img src="{{ Vite::asset('public/images2/characters_icons/attack.png') }}"
+                                            <img src="{{ Vite::asset('public/images/characters_icons/attack.png') }}"
                                                 alt="">
                                         </div>
                                         <span>{{ $character->attack }}</span>
                                     </div>
                                     <div class="px-5">
                                         <div>
-                                            <img src="{{ Vite::asset('public/images2/characters_icons/defence.png') }}"
+                                            <img src="{{ Vite::asset('public/images/characters_icons/defence.png') }}"
                                                 alt="">
                                         </div>
                                         <span>{{ $character->defence }}</span>
                                     </div>
                                     <div class="px-5">
                                         <div>
-                                            <img src="{{ Vite::asset('public/images2/characters_icons/speed.png') }}"
+                                            <img src="{{ Vite::asset('public/images/characters_icons/speed.png') }}"
                                                 alt="">
                                         </div>
                                         <span>{{ $character->speed }}</span>
                                     </div>
                                     <div class="px-5">
                                         <div>
-                                            <img src="{{ Vite::asset('public/images2/characters_icons/life.png') }}"
+                                            <img src="{{ Vite::asset('public/images/characters_icons/life.png') }}"
                                                 alt="">
                                         </div>
                                         <span>{{ $character->life }}</span>
