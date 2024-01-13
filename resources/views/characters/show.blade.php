@@ -101,5 +101,5 @@
 
         </section>
     </main>
-    @include('characters.partials.modal_delete')
+    @include('partials.modal_delete')
 @endsection
