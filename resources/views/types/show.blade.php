@@ -1,9 +1,8 @@
-<?php
-// use Parsedown;
-
-// $parsedown = new Parsedown();
-// $parsedDesc = $parsedown->text($type->desc);
-?>
+@php
+    use GrahamCampbell\Markdown\Facades\Markdown;
+    $markdownContent = $type->desc; // La tua stringa Markdown
+    $htmlContent = Markdown::convertToHtml($markdownContent); // Utilizza la libreria di Markdown di Laravel
+@endphp
 
 @extends('layouts.app')
 
@@ -24,7 +23,7 @@
             </div>
         </div>
 
-        <div>{{ $type->desc }}</div>
+        <p id="markdown-content">{!! $htmlContent !!}</p>
     </div>
 
     @include('partials.modal_delete')
