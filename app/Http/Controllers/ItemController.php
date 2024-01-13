@@ -40,7 +40,7 @@ class ItemController extends Controller
 
     /**
      * Display the specified resource.\
-     * 
+     *
      * @param  \App\Models\Item  $item
      * @return \Illuminate\View\View
      */
@@ -75,6 +75,6 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         $item->delete();
-        return redirect()->route('items.index')->with('success', 'Item $item->name deleted successfully');
+        return redirect()->route('items.index')->with('success', "Item $item->name deleted successfully");
     }
 }
