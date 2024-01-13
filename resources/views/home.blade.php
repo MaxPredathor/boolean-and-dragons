@@ -4,5 +4,6 @@
         <h1>Section title</h1>
         <p>section content</p>
         <a href="{{ route('characters.index') }}">Characters</a>
+        <a href="{{ route('types.index') }}">Types</a>
     </section>
 @endsection

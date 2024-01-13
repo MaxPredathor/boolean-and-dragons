@@ -6,9 +6,9 @@
                 <h1>Characters</h1>
                 <a href="{{ route('characters.create') }}">Create new Character</a>
             </div>
-            @if (session()->has('deleted'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{ session('deleted') }}
+                    {{ session('success') }}
                 </div>
             @endif
             <div class="row gy-4">
