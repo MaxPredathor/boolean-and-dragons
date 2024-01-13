@@ -1,4 +1,12 @@
+<?php
+// use Parsedown;
+
+// $parsedown = new Parsedown();
+// $parsedDesc = $parsedown->text($type->desc);
+?>
+
 @extends('layouts.app')
+
 
 @section('content')
     <div class="container">
@@ -16,7 +24,7 @@
             </div>
         </div>
 
-        <div markdown="1">{{ $type->desc }}</div>
+        <div>{{ $type->desc }}</div>
     </div>
 
     @include('partials.modal_delete')
