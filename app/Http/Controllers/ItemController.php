@@ -6,6 +6,7 @@ use App\Models\Item;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
@@ -34,6 +35,10 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $item = $request->validated();
+        if ($request->hasFile('image')) {
+            $img_path = Storage::put('uploads_items', $item['image']);
+            $item['image'] = $img_path;
+        }
         $newItem = Item::create($item);
         return redirect()->route('admin.items.show', $newItem->id);
     }
@@ -65,6 +70,13 @@ class ItemController extends Controller
     {
         $data = $request->validated();
         $item->fill($data);
+        if ($request->hasFile('image')) {
+            if (Storage::exists($item->image)) {
+                Storage::delete($item->image);
+            }
+            $img_path = Storage::put('uploads_items', $data['image']);
+            $data['image'] = $img_path;
+        }
         $item->update();
         return redirect()->route('admin.items.show', $item->id);
     }
