@@ -7,6 +7,10 @@
             <div class="col">
                 <div class="text-center border p-1">
                     <h2 class="fs-6 ">Name: {{ $item->name }}</h2>
+                    <div>
+                        <img class="w-50" src="{{ Vite::asset('public/images/items_images/' . $item->name . '.png') }}"
+                            alt="">
+                    </div>
                     <p class="fst-italic m-0">Slug: {{ $item->slug }}</p>
                     <p class="fst-italic m-0">Type: {{ $item->type }}</p>
                     <p class="fst-italic m-0">Weight: {{ $item->weight }}</p>
@@ -17,7 +21,8 @@
                             @csrf
                             @method('DELETE')
                             <button id="confirm-delete" class="cancel-button btn btn-danger"
-                                data-item-title="{{ $item->name }}" type="submit">Delete</button>
+                                data-item-title="{{ $item->name }}" type="submit">Delete
+                            </button>
                         </form>
                     </div>
                 </div>
