@@ -16,5 +16,6 @@ class Item extends Model
         'type',
         'weight',
         'cost',
+        'image'
     ];
 }

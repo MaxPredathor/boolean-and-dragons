@@ -18,7 +18,7 @@
                 </div>
             @endif
             <div class="row">
-                <form action="{{ route('admin.items.update', $item->id) }}" method="POST">
+                <form action="{{ route('admin.items.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div>
@@ -50,6 +50,19 @@
                         <label for="cost">Cost:</label>
                         <input value="{{ old('cost', $item->cost) }}" required class="form-control my-1" type="text"
                             id="cost" name="cost" placeholder="{{ $item->cost }}">
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-2">
+                            <img class="w-25" id="uploadPreview" src="{{ asset('storage/' . $item->image) }}"
+                                alt="image-preview">
+                        </div>
+                        <input value="{{ old('image', $item->image) }}" type="file"
+                            class="form-control @error('image') is-invalid
+                        @enderror" id="image"
+                            name="image">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button class="btn btn-primary my-1" type="submit">Edit</button>
                     <button class="btn btn-primary my-1" type="reset">Reset</button>

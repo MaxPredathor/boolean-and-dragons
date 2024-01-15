@@ -28,6 +28,7 @@ class StoreItemRequest extends FormRequest
             'type' => 'required|min:1|max:100',
             'weight' => 'required|min:1|max:10',
             'cost' => 'required|min:1|max:10',
+            'image' => 'nullable'
         ];
     }
     public function messages()
@@ -52,7 +53,5 @@ class StoreItemRequest extends FormRequest
             'cost.min' => 'The cost must be at least :min characters',
             'cost.max' => 'The cost must not be greater than :max characters',
         ];
-
-
     }
 }

@@ -18,7 +18,7 @@
                 </div>
             @endif
             <div class="row">
-                <form action="{{ route('admin.items.store') }}" method="POST">
+                <form action="{{ route('admin.items.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label for="name">Name:</label>
@@ -26,12 +26,7 @@
                             placeholder="Name">
                     </div>
                     <div>
-                        <label for="slug">Slug:</label>
-                        <input required class="form-control my-1" type="text" id="slug" name="slug"
-                            placeholder="Slug">
-                    </div>
-                    <div>
-                        <label for="category">Category</label>
+                        <label for="category">Category:</label>
                         <input required class="form-control my-1" type="text" id="category" name="category"
                             placeholder="Category">
                     </div>
@@ -49,6 +44,19 @@
                         <label for="cost">Cost:</label>
                         <input required class="form-control my-1" type="text" id="cost" name="cost"
                             placeholder="Cost">
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-2">
+                            <img class="w-25" id="uploadPreview" src="https://via.placeholder.com/300"
+                                alt="image-preview">
+                        </div>
+                        <input value="{{ old('image') }}" type="file"
+                            class="form-control @error('image') is-invalid
+                        @enderror" id="image"
+                            name="image">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button class="btn btn-primary my-1" type="submit">Add</button>
                     <button class="btn btn-primary my-1" type="reset">Reset</button>

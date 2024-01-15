@@ -8,10 +8,8 @@
                 <div class="text-center border p-1 text-white rounded" style="background-color: #272822">
                     <h2 class="fs-6 ">Name: {{ $item->name }}</h2>
                     <div>
-                        <img class="w-25" src="{{ Vite::asset('public/images/items_images/' . $item->name . '.png') }}"
-                            alt="">
+                        <img class="w-25" src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
                     </div>
-                    <p class="fst-italic m-0">Slug: {{ $item->slug }}</p>
                     <p class="fst-italic m-0">Type: {{ $item->type }}</p>
                     <p class="fst-italic m-0">Weight: {{ $item->weight }}</p>
                     <p class="fst-italic m-0">Cost: {{ $item->cost }}</p>
