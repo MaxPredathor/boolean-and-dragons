@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Character;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class CharacterController extends Controller
 {
@@ -32,6 +33,10 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            $img_path = Storage::put('uploads_character', $formData['image']);
+            $formData['image'] = $img_path;
+        }
         $newCharacter = Character::create($formData);
         return to_route('admin.characters.show', $newCharacter->id)->with('success', 'Character created successfully' . $newCharacter->name);
     }
@@ -49,7 +54,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view('admin.characters.edit', compact('character'));
     }
 
     /**
@@ -57,7 +62,16 @@ class CharacterController extends Controller
      */
     public function update(UpdateCharacterRequest $request, Character $character)
     {
-        //
+        $formData = $request->validated();
+        if ($request->hasFile('image')) {
+            if (Storage::exists($character->image)) {
+                Storage::delete($character->image);
+            }
+            $img_path = Storage::put('uploads_character', $formData['image']);
+            $formData['image'] = $img_path;
+        }
+        $character->update($formData);
+        return redirect()->route('admin.characters.show', $character->id)->with('success', 'Character modified successfully' . $character->name);
     }
 
     /**

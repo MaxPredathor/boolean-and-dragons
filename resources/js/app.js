@@ -31,3 +31,4 @@ previewImage.addEventListener("change", (event) => {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
 });
+

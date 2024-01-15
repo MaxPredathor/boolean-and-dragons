@@ -45,11 +45,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="{{ Vite::asset("public/images/characters_images/$character->name.png") }}"
-                                    alt="{{ $character->name }}" style="width: 600px;">
+                                {{-- <img src="{{ Vite::asset("public/images/characters_images/$character->name.png") }}"
+                                    alt="{{ $character->name }}" style="width: 600px;"> --}}
+                            </div>
+                            <div>
+                                <img class="w-50" src="{{ asset('storage/' . $character->image) }}"
+                                    alt="{{ $character->name }}">
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('admin.characters.index') }}" class="btn btn-primary">Return</a>
+                            <a href="{{ route('admin.characters.edit', $character->id) }}" class="btn btn-warning">Edit</a>
                             <form action="{{ route('admin.characters.destroy', $character->id) }}" class="d-inline"
                                 method="POST">
                                 @csrf
