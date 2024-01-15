@@ -1,3 +1,4 @@
+@include('layouts.partials.header')
 @extends('layouts.app')
 @section('content')
     <main class="bg-light py-0">

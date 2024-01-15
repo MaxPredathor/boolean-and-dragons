@@ -3,7 +3,7 @@
     $markdownContent = $type->desc; // La tua stringa Markdown
     $htmlContent = Markdown::convertToHtml($markdownContent); // Utilizza la libreria di Markdown di Laravel
 @endphp --}}
-
+@include('layouts.partials.header')
 @extends('layouts.app')
 
 
