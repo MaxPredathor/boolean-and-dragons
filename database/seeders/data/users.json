@@ -3,52 +3,62 @@
     {
     "name": "Alice Johnson",
     "email": "alice@email.com",
-    "password": "password123"
+    "password": "password123",
+    "username": "alice"
     },
     {
     "name": "Bob Smith",
     "email": "bob@email.com",
-    "password": "securepass456"
+    "password": "securepass456",
+    "username": "bob"
     },
     {
     "name": "Charlie Brown",
     "email": "charlie@email.com",
-    "password": "letmein789"
+    "password": "letmein789",
+    "username": "charlie"
     },
     {
     "name": "Diana Miller",
     "email": "diana@email.com",
-    "password": "secretword101"
+    "password": "secretword101",
+    "username": "diana"
     },
     {
     "name": "Edward Davis",
     "email": "edward@email.com",
-    "password": "mysecurepass"
+    "password": "mysecurepass",
+    "username": "edward"
     },
     {
     "name": "Fiona White",
     "email": "fiona@email.com",
-    "password": "fionapass123"
+    "password": "fionapass123",
+    "username": "fiona"
     },
     {
     "name": "George Wilson",
     "email": "george@email.com",
-    "password": "wilsonpass456"
+    "password": "wilsonpass456",
+    "username": "george"
     },
     {
     "name": "Holly Taylor",
     "email": "holly@email.com",
-    "password": "hollywood789"
+    "password": "hollywood789",
+    "username": "holly"
     },
     {
     "name": "Ian Brown",
     "email": "ian@email.com",
-    "password": "brownpass101"
+    "password": "brownpass101",
+    "username": "ian"
     },
     {
     "name": "Jackie Reed",
     "email": "jackie@email.com",
-    "password": "jackiereedpass"
+    "password": "jackiereedpass",
+    "username": "jackie"
     }
 ]
 
