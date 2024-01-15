@@ -60,7 +60,7 @@
                 </div>
                 <div class="mb-3">
                     <div class="mb-2">
-                        <img class="w-25" src="{{ asset('storage/' . $character->image) }}"
+                        <img class="w-25" id="uploadPreview" src="{{ asset('storage/' . $character->image) }}"
                             alt="{{ $character->name }}">
                     </div>
                     <input value="{{ old('image') }}" type="file"

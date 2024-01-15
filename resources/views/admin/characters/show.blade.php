@@ -45,8 +45,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <img src="{{ Vite::asset("public/images/characters_images/$character->name.png") }}"
-                                    alt="{{ $character->name }}" style="width: 600px;"> --}}
+                                <img src="{{ Vite::asset("public/images/characters_images/$character->name.png") }}"
+                                    alt="{{ $character->name }}" style="width: 600px;">
                             </div>
                             <div>
                                 <img class="w-50" src="{{ asset('storage/' . $character->image) }}"

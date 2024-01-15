@@ -60,7 +60,7 @@
                 </div>
                 <div class="mb-3">
                     <div class="mb-2">
-                        <img class="w-25" id="image-preview" src="https://via.placeholder.com/300" alt="image-preview">
+                        <img class="w-25" id="uploadPreview" src="https://via.placeholder.com/300" alt="image-preview">
                     </div>
                     <input value="{{ old('image') }}" type="file"
                         class="form-control @error('image') is-invalid
