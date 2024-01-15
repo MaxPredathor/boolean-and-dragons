@@ -1,0 +1,54 @@
+
+[
+    {
+    "name": "Alice Johnson",
+    "email": "alice@email.com",
+    "password": "password123"
+    },
+    {
+    "name": "Bob Smith",
+    "email": "bob@email.com",
+    "password": "securepass456"
+    },
+    {
+    "name": "Charlie Brown",
+    "email": "charlie@email.com",
+    "password": "letmein789"
+    },
+    {
+    "name": "Diana Miller",
+    "email": "diana@email.com",
+    "password": "secretword101"
+    },
+    {
+    "name": "Edward Davis",
+    "email": "edward@email.com",
+    "password": "mysecurepass"
+    },
+    {
+    "name": "Fiona White",
+    "email": "fiona@email.com",
+    "password": "fionapass123"
+    },
+    {
+    "name": "George Wilson",
+    "email": "george@email.com",
+    "password": "wilsonpass456"
+    },
+    {
+    "name": "Holly Taylor",
+    "email": "holly@email.com",
+    "password": "hollywood789"
+    },
+    {
+    "name": "Ian Brown",
+    "email": "ian@email.com",
+    "password": "brownpass101"
+    },
+    {
+    "name": "Jackie Reed",
+    "email": "jackie@email.com",
+    "password": "jackiereedpass"
+    }
+]
+
