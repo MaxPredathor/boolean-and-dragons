@@ -35,12 +35,14 @@ class ItemController extends Controller
     public function store(StoreItemRequest $request)
     {
         $item = $request->validated();
+        $slug = Item::getSlug($item['name'], '-');
+        $item['slug'] = $slug;
         if ($request->hasFile('image')) {
             $img_path = Storage::put('uploads_items', $item['image']);
             $item['image'] = $img_path;
         }
         $newItem = Item::create($item);
-        return redirect()->route('admin.items.show', $newItem->id);
+        return redirect()->route('admin.items.show', $newItem->slug);
     }
 
     /**
@@ -70,6 +72,12 @@ class ItemController extends Controller
     {
         $data = $request->validated();
         $item->fill($data);
+        if ($item->title !== $data['name']) {
+            $slug = Item::getSlug($data['name'], '-');
+        } else {
+            $slug = $item->slug;
+        }
+        $data['slug'] = $slug;
         if ($request->hasFile('image')) {
             if (Storage::exists($item->image)) {
                 Storage::delete($item->image);
@@ -78,7 +86,7 @@ class ItemController extends Controller
             $data['image'] = $img_path;
         }
         $item->update();
-        return redirect()->route('admin.items.show', $item->id);
+        return redirect()->route('admin.items.show', $item->slug);
     }
 
     /**

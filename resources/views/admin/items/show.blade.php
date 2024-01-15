@@ -14,8 +14,8 @@
                     <p class="fst-italic m-0">Weight: {{ $item->weight }}</p>
                     <p class="fst-italic m-0">Cost: {{ $item->cost }}</p>
                     <div class="d-flex justify-content-center gap-2">
-                        <a href="{{ route('admin.items.edit', $item->id) }}" class="btn btn-primary mb-4 mt-2">Edit</a>
-                        <form class="mb-4 mt-2" action="{{ route('admin.items.destroy', $item->id) }}" method="POST">
+                        <a href="{{ route('admin.items.edit', $item->slug) }}" class="btn btn-primary mb-4 mt-2">Edit</a>
+                        <form class="mb-4 mt-2" action="{{ route('admin.items.destroy', $item->slug) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button id="confirm-delete" class="cancel-button btn btn-danger"

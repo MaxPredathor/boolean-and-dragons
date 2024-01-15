@@ -33,8 +33,10 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $formdata = $request->validated();
+        $slug = Type::getSlug($formdata['name'], '-');
+        $formdata['slug'] = $slug;
         if ($request->hasFile('image')) {
-            $path = Storage::put('images', $formdata['image']);
+            $path = Storage::put('uploads_types', $formdata['image']);
             $formdata['image'] = $path;
         }
         $type = Type::create($formdata);
@@ -64,17 +66,23 @@ class TypeController extends Controller
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $formdata = $request->validated();
+        // $type->fill($formdata);
+        if ($type->title !== $formdata['name']) {
+            $slug = Type::getSlug($formdata['name'], '-');
+        } else {
+            $slug = $type->slug;
+        }
+        $formdata['slug'] = $slug;
         if ($request->hasFile('image')) {
-            if ($type->image) {
+            if (Storage::exists($type->image)) {
                 Storage::delete($type->image);
             }
 
-            $path = Storage::put('images', $formdata['image']);
+            $path = Storage::put('uploads_types', $formdata['image']);
             $formdata['image'] = $path;
         }
-        $type->fill($formdata);
-        $type->update();
-        return view('admin.types.show', compact('type'));
+        $type->update($formdata);
+        return redirect()->route('admin.types.show', $type->slug);
     }
 
     /**

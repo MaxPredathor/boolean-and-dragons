@@ -9,7 +9,7 @@
             <div class="container">
                 <h2>Update {{ $type->name }}</h2>
                 <div class="row">
-                    <form action="{{ route('admin.types.update', $type->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.types.update', $type->slug) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <input required value="{{ $type->name }}"
@@ -36,16 +36,6 @@
                             btn-primary mt-2" type="submit">Add</button>
                         <input type="reset" class="btn btn-danger mt-2" value="Reset">
                     </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="final-one">
-            <div class="container">
-                <div class="row">
-                    <div>
-
-                    </div>
                 </div>
             </div>
         </div>

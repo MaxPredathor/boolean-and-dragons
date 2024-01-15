@@ -23,7 +23,7 @@ class StoreCharacterRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:200',
-            'description' => 'nullable|max:500',
+            'description' => 'required|max:500',
             'attack' => 'required|integer',
             'defence' => 'required|integer',
             'speed' => 'required|integer',
@@ -42,6 +42,7 @@ class StoreCharacterRequest extends FormRequest
             'name.min' => 'The name must be at least :min characters',
             'name.max' => 'The name must be at most :max characters',
             'description.max' => 'The description must be at most :max characters',
+            'description.required' => 'The description is required',
             'life.integer' => 'The life must be an integer',
             'attack.integer' => 'The attack must be an integer',
             'defence.integer' => 'The defence must be an integer',
