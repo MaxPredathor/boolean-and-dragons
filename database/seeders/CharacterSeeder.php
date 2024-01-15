@@ -23,6 +23,7 @@ class CharacterSeeder extends Seeder
             $item->defence = $characterData['defence'];
             $item->speed = $characterData['speed'];
             $item->life = $characterData['life'];
+            $item->image = $characterData['image'];
             $item->save();
         }
     }

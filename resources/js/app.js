@@ -21,3 +21,11 @@ buttons.forEach((button) => {
         });
     });
 });
+const previewImage = document.getElementById("image");
+previewImage.addEventListener("change", (event) => {
+    let oFReader = new FileReader();
+    oFReader.readAsDataURL(previewImage.files[0]);
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("image-preview").src = oFREvent.target.result;
+    }
+})

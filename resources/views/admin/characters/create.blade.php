@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <section class="container">
-            <form action="{{ route('admin.characters.store') }}" method="POST">
+            <form action="{{ route('admin.characters.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -55,6 +55,18 @@
                     @enderror"
                         id="life" required name="life">
                     @error('life')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <div class="mb-2">
+                        <img class="w-25" id="image-preview" src="https://via.placeholder.com/300" alt="image-preview">
+                    </div>
+                    <input value="{{ old('image') }}" type="file"
+                        class="form-control @error('image') is-invalid
+                    @enderror" id="image"
+                        name="image">
+                    @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
