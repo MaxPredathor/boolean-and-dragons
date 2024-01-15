@@ -12,8 +12,8 @@
             @foreach ($types as $type)
                 <div class="col-3 my-2">
                     <div class="card h-100">
-                        <img src="{{ Vite::asset("/public/images/icon_types/$type->name.jpg") }}" style="height: 300px;"
-                            class="card-img-top w-100" alt="{{ $type->name }}">
+                        <img src="{{ asset('storage/' . $type->image) }}" style="height: 300px;" class="card-img-top w-100"
+                            alt="{{ $type->name }}">
                         <div class="card-body d-flex justify-content-between">
                             <h3 class="card-title">{{ $type->name }}</h3>
                             <a href="{{ route('admin.types.show', $type->id) }}" class="btn btn-danger">View More</a>

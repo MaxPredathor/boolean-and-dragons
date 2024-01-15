@@ -9,7 +9,7 @@
             <div class="container">
                 <h2>Update {{ $type->name }}</h2>
                 <div class="row">
-                    <form action="{{ route('admin.types.update', $type->id) }}" method="POST">
+                    <form action="{{ route('admin.types.update', $type->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <input required value="{{ $type->name }}"
@@ -21,6 +21,11 @@
                         <textarea required rows="8" class="form-control my-1 @error('series') is-invalid @enderror" type="text"
                             id="series" name="desc" placeholder="desc">{{ $type->desc }}</textarea>
                         @error('desc')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        <label for="image">Image</label>
+                        <input type="file" accept="image/*" name="image" id="image" class="form-control my-1">
+                        @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <button class="btn

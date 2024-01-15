@@ -24,6 +24,7 @@ class UpdateTypeRequest extends FormRequest
         return [
             'name' => 'required',
             'desc' => 'required|min:255',
+            'image' => 'image'
         ];
     }
     public function messages()
@@ -33,6 +34,7 @@ class UpdateTypeRequest extends FormRequest
             'name.required' => 'You have to insert a name',
             'desc.required' => 'You have to insert a description',
             'desc.min' => 'this field must have at least :min characters',
+            'image.image' => 'You have to insert an image'
         ];
 
     }

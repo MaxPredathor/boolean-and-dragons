@@ -6,6 +6,7 @@ use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class TypeController extends Controller
 {
@@ -32,6 +33,10 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $formdata = $request->validated();
+        if ($request->hasFile('image')) {
+            $path = Storage::put('images', $formdata['image']);
+            $formdata['image'] = $path;
+        }
         $type = Type::create($formdata);
 
         return to_route('admin.types.index')->with('message', "The Type $type->name has been successfully created");
@@ -59,6 +64,14 @@ class TypeController extends Controller
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $formdata = $request->validated();
+        if ($request->hasFile('image')) {
+            if ($type->image) {
+                Storage::delete($type->image);
+            }
+
+            $path = Storage::put('images', $formdata['image']);
+            $formdata['image'] = $path;
+        }
         $type->fill($formdata);
         $type->update();
         return view('admin.types.show', compact('type'));
