@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('items', ItemController::class);
+
 
 // Route::get('/items', [ItemController::class, 'index'])->name('index');
 
@@ -31,6 +31,9 @@ Route::resource('items', ItemController::class);
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('items', ItemController::class);
+    Route::resource('characters', CharacterController::class);
+    Route::resource('types', TypeController::class);
 });
 
 
@@ -46,6 +49,3 @@ require __DIR__ . '/auth.php';
 Route::fallback(function () {
     return redirect()->route('admin.dashboard');
 });
-
-Route::resource('characters', CharacterController::class);
-Route::resource('types', TypeController::class);

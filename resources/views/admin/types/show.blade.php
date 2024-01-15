@@ -12,9 +12,9 @@
         <div>
             <h1>{{ $type->name }}</h1>
             <div class="d-flex">
-                <a href="{{ route('types.index') }}" class="btn btn-secondary me-2">Back</a>
-                <a href="{{ route('types.edit', $type->id) }}" class="btn btn-success me-2">Edit</a>
-                <form action="{{ route('types.destroy', $type->id) }}" method="POST" class="me-2" id="delete-form">
+                <a href="{{ route('admin.types.index') }}" class="btn btn-secondary me-2">Back</a>
+                <a href="{{ route('admin.types.edit', $type->id) }}" class="btn btn-success me-2">Edit</a>
+                <form action="{{ route('admin.types.destroy', $type->id) }}" method="POST" class="me-2" id="delete-form">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger cancel-button" type="submit"

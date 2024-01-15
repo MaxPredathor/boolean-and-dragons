@@ -54,6 +54,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        @if (Auth::check())
+                            <li>
+                                <a href="{{ route('admin.characters.index') }}">Characters</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.types.index') }}">Types</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.items.index') }}">Items</a>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

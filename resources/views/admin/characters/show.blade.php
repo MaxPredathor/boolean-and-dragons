@@ -49,8 +49,8 @@
                                     alt="{{ $character->name }}" style="width: 600px;">
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
-                            <a href="{{ route('characters.index') }}" class="btn btn-primary">Return</a>
-                            <form action="{{ route('characters.destroy', $character->id) }}" class="d-inline"
+                            <a href="{{ route('admin.characters.index') }}" class="btn btn-primary">Return</a>
+                            <form action="{{ route('admin.characters.destroy', $character->id) }}" class="d-inline"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')

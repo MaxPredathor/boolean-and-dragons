@@ -4,7 +4,7 @@
         <section class="container">
             <div>
                 <h1>Characters</h1>
-                <a href="{{ route('characters.create') }}">Create new Character</a>
+                <a href="{{ route('admin.characters.create') }}">Create new Character</a>
             </div>
             @if (session()->has('success'))
                 <div class="alert alert-success">
@@ -19,7 +19,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $character->name }}</h5>
                                 <p class="card-text">{{ substr($character->description, 0, 100) . '...' }}</p>
-                                <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">Show
+                                <a href="{{ route('admin.characters.show', $character->id) }}" class="btn btn-primary">Show
                                     Details</a>
                             </div>
                         </div>

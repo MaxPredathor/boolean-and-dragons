@@ -15,7 +15,7 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
-        return view('characters.index', compact('characters'));
+        return view('admin.characters.index', compact('characters'));
     }
 
     /**
@@ -23,7 +23,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('characters.create');
+        return view('admin.characters.create');
     }
 
     /**
@@ -33,7 +33,7 @@ class CharacterController extends Controller
     {
         $formData = $request->validated();
         $newCharacter = Character::create($formData);
-        return to_route('characters.show', $newCharacter->id)->with('success', 'Character created successfully' . $newCharacter->name);
+        return to_route('admin.characters.show', $newCharacter->id)->with('success', 'Character created successfully' . $newCharacter->name);
     }
 
     /**
@@ -41,7 +41,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        return view('characters.show', compact('character'));
+        return view('admin.characters.show', compact('character'));
     }
 
     /**
@@ -66,6 +66,6 @@ class CharacterController extends Controller
     public function destroy(Character $character)
     {
         $character->delete();
-        return to_route('characters.index')->with('success', "The Character $character->name has been successfully deleted.");
+        return to_route('admin.characters.index')->with('success', "The Character $character->name has been successfully deleted.");
     }
 }

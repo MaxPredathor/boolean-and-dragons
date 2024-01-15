@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <section class="container">
-            <form action="{{ route('characters.store') }}" method="POST">
+            <form action="{{ route('admin.characters.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -58,7 +58,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <a href="{{ route('characters.index') }}" class="btn btn-secondary">Return</a>
+                <a href="{{ route('admin.characters.index') }}" class="btn btn-secondary">Return</a>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </section>

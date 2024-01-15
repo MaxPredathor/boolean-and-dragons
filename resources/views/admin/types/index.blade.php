@@ -4,7 +4,7 @@
     <div class="container">
         <h1>
             All classes</h1>
-        <a href="{{ route('types.create') }}" class="btn btn-success">Add a new class</a>
+        <a href="{{ route('admin.types.create') }}" class="btn btn-success">Add a new class</a>
         <div class="row">
             @if (session()->has('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
@@ -16,7 +16,7 @@
                             class="card-img-top w-100" alt="{{ $type->name }}">
                         <div class="card-body d-flex justify-content-between">
                             <h3 class="card-title">{{ $type->name }}</h3>
-                            <a href="{{ route('types.show', $type->id) }}" class="btn btn-danger">View More</a>
+                            <a href="{{ route('admin.types.show', $type->id) }}" class="btn btn-danger">View More</a>
                         </div>
                     </div>
                 </div>

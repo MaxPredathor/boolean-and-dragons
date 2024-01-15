@@ -9,7 +9,7 @@
             <div class="container">
                 <h2>Update {{ $type->name }}</h2>
                 <div class="row">
-                    <form action="{{ route('types.update', $type->id) }}" method="POST">
+                    <form action="{{ route('admin.types.update', $type->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <input required value="{{ $type->name }}"

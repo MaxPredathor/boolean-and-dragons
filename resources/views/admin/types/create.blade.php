@@ -10,7 +10,7 @@
                 <h2>Create a new Character Type</h2>
 
                 <div class="row">
-                    <form action="{{ route('types.store') }}" method="POST">
+                    <form action="{{ route('admin.types.store') }}" method="POST">
                         @csrf
                         <input required class="form-control my-1 @error('name') is-invalid @enderror" type="text"
                             id="name" name="name" placeholder="name">

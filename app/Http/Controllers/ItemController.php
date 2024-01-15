@@ -16,7 +16,7 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
-        return view('items.index', compact('items'));
+        return view('admin.items.index', compact('items'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('items.create');
+        return view('admin.items.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class ItemController extends Controller
     {
         $item = $request->validated();
         $newItem = Item::create($item);
-        return redirect()->route('items.show', $newItem->id);
+        return redirect()->route('admin.items.show', $newItem->id);
     }
 
     /**
@@ -46,7 +46,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return view('items.show', compact('item'));
+        return view('admin.items.show', compact('item'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        return view('items.edit', compact('item'));
+        return view('admin.items.edit', compact('item'));
     }
 
     /**
@@ -66,7 +66,7 @@ class ItemController extends Controller
         $data = $request->validated();
         $item->fill($data);
         $item->update();
-        return redirect()->route('items.show', $item->id);
+        return redirect()->route('admin.items.show', $item->id);
     }
 
     /**
@@ -75,6 +75,6 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         $item->delete();
-        return redirect()->route('items.index')->with('success', "Item $item->name deleted successfully");
+        return redirect()->route('admin.items.index')->with('success', "Item $item->name deleted successfully");
     }
 }
