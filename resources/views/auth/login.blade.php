@@ -2,9 +2,24 @@
 
 @section('content')
     <div id="login">
-        <video autoplay muted>
+        <video muted>
             <source src="{{ Vite::asset('public/images/video/login-video.mp4') }}" type="video/mp4">
         </video>
+        <audio crossOrigin="anonymous" id="login-sound">
+            <source src="{{ Vite::asset('public/images/audio/login-audio.mp3') }}" type="audio/mpeg">
+        </audio>
+        <div id="overlay">
+            <button id="login-button" class="btn btn-danger">Login</button>
+        </div>
+        <script>
+            const button = document.getElementById('login-button');
+            button.addEventListener('click', () => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('login-sound').play();
+                document.getElementById('login-sound').volume = 0.4;
+                document.querySelector('video').play();
+            });
+        </script>
         <div id="login-card" class="row justify-content-center position-absolute bg-*">
             <div class="bg-*">
                 <form method="POST" class="text-white" action="{{ route('login') }}">

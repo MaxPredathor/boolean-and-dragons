@@ -32,3 +32,10 @@ previewImage.addEventListener("change", (event) => {
     };
 });
 
+// const login = document.getElementById("loginButton");
+// const loginAudio = new Audio("/images/audio/login-audio.mp3");
+// login.addEventListener("click", (event) => {
+//     setTimeout(function () {
+//         loginAudio.play();
+//     }, 500);
+// });
