@@ -24,6 +24,10 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <label for="image">Image</label>
+                        <div class="my-3" style="width: 200px;">
+                            <img class="w-100" id="uploadPreview" src="{{ asset('storage/' . $type->image) }}"
+                                alt="Placeholder">
+                        </div>
                         <input type="file" accept="image/*" name="image" id="image" class="form-control my-1">
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>

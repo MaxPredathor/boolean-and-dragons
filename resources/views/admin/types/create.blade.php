@@ -23,6 +23,11 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <label for="image">Image</label>
+                        <div class="my-3" style="width: 200px;">
+                            <img class="w-100" id="uploadPreview"
+                                src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg"
+                                alt="Placeholder">
+                        </div>
                         <input type="file" accept="image/*" name="image" id="image" class="form-control my-1">
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
