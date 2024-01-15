@@ -7,7 +7,6 @@
         </video>
         <div id="login-card" class="row justify-content-center position-absolute bg-*">
             <div class="bg-*">
-                {{-- <div class="card-body"> --}}
                 <form method="POST" class="text-white" action="{{ route('login') }}">
                     @csrf
 
@@ -70,7 +69,6 @@
                         </div>
                     </div>
                 </form>
-                {{-- </div> --}}
             </div>
         </div>
     </div>
