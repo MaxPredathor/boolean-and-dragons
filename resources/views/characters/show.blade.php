@@ -7,41 +7,48 @@
             </div> --}}
             <div class="container">
                 <div class="row gy-4">
-                    <div class="col-12 d-flex">
+                    <div class="col-12">
                         <div class="px-4">
                             <h2 class="py-4">{{ $character->name }}</h2>
-                            <div id="button">
-                                <div class="w-75 d-flex justify-content-between align-items-center">
-                                    <div class="px-5">
-                                        <div>
-                                            <img src="{{ Vite::asset('public/images/characters_icons/attack.png') }}"
-                                                alt="">
+                            <div class="d-flex">
+                                <div id="button">
+                                    <div class="w-75 d-flex flex-column justify-content-between align-items-center">
+                                        <div class="px-5 d-flex">
+                                            <div>
+                                                <img class="icon-square"
+                                                    src="{{ Vite::asset('public/images/characters_icons/attack.png') }}"
+                                                    alt="">
+                                            </div>
+                                            <span>{{ $character->attack }}</span>
                                         </div>
-                                        <span>{{ $character->attack }}</span>
-                                    </div>
-                                    <div class="px-5">
-                                        <div>
-                                            <img src="{{ Vite::asset('public/images/characters_icons/defence.png') }}"
-                                                alt="">
+                                        <div class="px-5">
+                                            <div>
+                                                <img class="icon-square"
+                                                    src="{{ Vite::asset('public/images/characters_icons/defence.png') }}"
+                                                    alt="">
+                                            </div>
+                                            <span>{{ $character->defence }}</span>
                                         </div>
-                                        <span>{{ $character->defence }}</span>
-                                    </div>
-                                    <div class="px-5">
-                                        <div>
-                                            <img src="{{ Vite::asset('public/images/characters_icons/speed.png') }}"
-                                                alt="">
+                                        <div class="px-5">
+                                            <div>
+                                                <img class="icon-square"
+                                                    src="{{ Vite::asset('public/images/characters_icons/speed.png') }}"
+                                                    alt="">
+                                            </div>
+                                            <span>{{ $character->speed }}</span>
                                         </div>
-                                        <span>{{ $character->speed }}</span>
-                                    </div>
-                                    <div class="px-5">
-                                        <div>
-                                            <img src="{{ Vite::asset('public/images/characters_icons/life.png') }}"
-                                                alt="">
+                                        <div class="px-5">
+                                            <div>
+                                                <img class="icon-square"
+                                                    src="{{ Vite::asset('public/images/characters_icons/life.png') }}"
+                                                    alt="">
+                                            </div>
+                                            <span>{{ $character->life }}</span>
                                         </div>
-                                        <span>{{ $character->life }}</span>
                                     </div>
                                 </div>
-
+                                <img src="{{ Vite::asset("public/images/characters_images/$character->name.png") }}"
+                                    alt="{{ $character->name }}" style="width: 600px;">
                             </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('characters.index') }}" class="btn btn-primary">Return</a>
