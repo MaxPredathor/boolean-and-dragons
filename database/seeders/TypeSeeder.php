@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class TypeSeeder extends Seeder
 {
@@ -22,6 +23,7 @@ class TypeSeeder extends Seeder
             $newItem->image = TypeSeeder::storeimage(__DIR__ . '/images/icon_types/' . $typeData['name'] . '.jpg', $typeData['name']);
             $newItem->name = $typeData['name'];
             $newItem->desc = $typeData['desc'];
+            $newItem->slug = Str::slug($typeData['name'], '-');
             $newItem->save();
         }
     }

@@ -15,11 +15,13 @@
                 @foreach ($characters as $character)
                     <div class="col-12 col-md-4 col-lg-3">
                         <div class="card">
-                            <img src="{{ $character->thumb }}" alt="{{ $character->name }}" class="card-img-top">
+                            <img src="{{ asset('storage/' . $character->image) }}" alt="{{ $character->name }}"
+                                class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $character->name }}</h5>
                                 <p class="card-text">{{ substr($character->description, 0, 100) . '...' }}</p>
-                                <a href="{{ route('admin.characters.show', $character->id) }}" class="btn btn-primary">Show
+                                <a href="{{ route('admin.characters.show', $character->slug) }}"
+                                    class="btn btn-primary">Show
                                     Details</a>
                             </div>
                         </div>

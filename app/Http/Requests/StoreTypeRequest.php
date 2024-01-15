@@ -36,6 +36,5 @@ class StoreTypeRequest extends FormRequest
             'desc.min' => 'This field must have at least :min characters',
             'image.image' => 'You have to insert an image',
         ];
-
     }
 }
