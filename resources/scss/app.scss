@@ -9,11 +9,22 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+    font-family: "Vecna";
+    src: url(/fonts/Vecna-oppx.ttf) format("truetype");
+}
+
 h1 {
     color: $text-color;
 }
-main{
+
+main {
     margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .icon-square {
@@ -21,24 +32,129 @@ main{
     height: 50px;
 }
 
-#login{
+#login {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     position: relative;
 
-    video{
+    video {
         width: 100%;
         height: 100vh;
         object-fit: cover;
     }
-    #login-card{
+
+    #login-card {
         width: 500px;
         position: absolute;
         top: 50%;
         left: 20%;
         transform: translate(-50%, -20%);
+
+        .small-container {
+            // width: 50%;
+            margin-bottom: 20px;
+
+            .pre-input {
+                width: 306px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                clip-path: polygon(
+                    8% 5%,
+                    92% 5%,
+                    99% 50%,
+                    92% 95%,
+                    8% 95%,
+                    1% 50%
+                );
+                background: rgb(115, 84, 67);
+                background: linear-gradient(
+                    125deg,
+                    rgba(115, 84, 67, 1) 0%,
+                    rgba(102, 73, 53, 1) 21%,
+                    rgba(199, 184, 142, 1) 50%,
+                    rgba(102, 73, 53, 1) 76%,
+                    rgba(115, 84, 67, 1) 100%
+                );
+                -webkit-box-shadow: 0 10px 17.5px 4.5px #262222;
+                -moz-box-shadow: 0 10px 17.5px 4.5px #262222;
+                box-shadow: 0 10px 17.5px 4.5px #262222;
+
+                input {
+                    font-family: "Vecna", sans-serif;
+                    font-size: 1.4em;
+                    width: 300px;
+                    height: 50px;
+                    text-align: center;
+                    color: white !important;
+                    clip-path: polygon(
+                        8% 5%,
+                        92% 5%,
+                        99% 50%,
+                        92% 95%,
+                        8% 95%,
+                        1% 50%
+                    );
+                    background: rgb(38, 28, 23);
+                    background: linear-gradient(
+                        125deg,
+                        rgba(38, 28, 23, 1) 0%,
+                        rgba(46, 32, 24, 1) 4%,
+                        rgba(72, 51, 37, 1) 30%,
+                        rgba(46, 32, 24, 0.7987570028011204) 96%,
+                        rgba(38, 28, 23, 1) 100%
+                    );
+                    background: -webkit-linear-gradient(
+                        125deg,
+                        rgba(38, 28, 23, 1) 0%,
+                        rgba(46, 32, 24, 1) 4%,
+                        rgba(72, 51, 37, 1) 30%,
+                        rgba(46, 32, 24, 0.7987570028011204) 96%,
+                        rgba(38, 28, 23, 1) 100%
+                    );
+
+                    &:-webkit-autofill {
+                        background: rgb(38, 28, 23) !important;
+                        background: linear-gradient(
+                            125deg,
+                            rgba(38, 28, 23, 1) 0%,
+                            rgba(46, 32, 24, 1) 4%,
+                            rgba(72, 51, 37, 1) 30%,
+                            rgba(46, 32, 24, 0.7987570028011204) 96%,
+                            rgba(38, 28, 23, 1) 100% !important
+                        );
+                        background: -webkit-linear-gradient(
+                            125deg,
+                            rgba(38, 28, 23, 1) 0%,
+                            rgba(46, 32, 24, 1) 4%,
+                            rgba(72, 51, 37, 1) 30%,
+                            rgba(46, 32, 24, 0.7987570028011204) 96%,
+                            rgba(38, 28, 23, 1) 100% !important
+                        );
+                    }
+
+                    &::placeholder {
+                        color: lightgrey !important;
+                    }
+                }
+            }
+        }
+        #remember {
+            input {
+                background-color: #493628 !important;
+                border: 1px solid #c5b68c;
+                width: 20px;
+                height: 20px;
+            }
+            label {
+                font-family: "Vecna";
+            }
+        }
     }
-    #overlay{
+
+    #overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -47,11 +163,33 @@ main{
         background-color: rgb(0, 0, 0);
         z-index: 100;
 
-        button{
+        button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
     }
+}
+
+.box {
+    width: 251px;
+    height: 57px;
+}
+
+.box .base {
+    position: fixed;
+    width: 251px;
+    height: 57px;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 12px 28px 8px #00000059, inset 0px -7px 1px #9a4212,
+        inset 0px -6px 0px #321205, inset 0px 8px 0px #ffe8cdcc,
+        inset 0px 7px 0px #b4a284;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.7) 48.44%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
