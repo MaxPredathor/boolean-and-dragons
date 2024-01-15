@@ -25,7 +25,7 @@
 
 <body>
     <div id="app">
-        @include('layouts.partials.navbar')
+        @include('layouts.partials.header')
 
         <main class="">
             @yield('content')
