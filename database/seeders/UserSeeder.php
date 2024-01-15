@@ -14,11 +14,12 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $json = file_get_contents(__DIR__ . '/data/users.json');
-        $content =  json_decode($json, true);
+        $content = json_decode($json, true);
         foreach ($content as $userData) {
             $item = new User();
             $item->name = $userData['name'];
             $item->email = $userData['email'];
+            $item->username = $userData['username'];
             $item->password = bcrypt($userData['password']);
             $item->save();
         }
