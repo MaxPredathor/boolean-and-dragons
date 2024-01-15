@@ -23,7 +23,6 @@ class StoreItemRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:200',
-            'slug' => 'required|min:5|max:200',
             'category' => 'required|min:5|max:100',
             'type' => 'required|min:1|max:100',
             'weight' => 'required|min:1|max:10',
@@ -37,9 +36,6 @@ class StoreItemRequest extends FormRequest
             'name.required' => 'The name is required',
             'name.min' => 'The name must be at least :min characters',
             'name.max' => 'The name must not be greater than :max characters',
-            'slug.required' => 'The slug is required',
-            'slug.min' => 'The slug must be at least :min characters',
-            'slug.max' => 'The slug must not be greater than :max characters',
             'category.required' => 'The category is required',
             'category.min' => 'The category must be at least :min characters',
             'category.max' => 'The category must not be greater than :max characters',

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
+use Illuminate\Support\Str;
 
 class CharacterSeeder extends Seeder
 {
@@ -24,6 +25,7 @@ class CharacterSeeder extends Seeder
             $item->speed = $characterData['speed'];
             $item->life = $characterData['life'];
             $item->image = null;
+            $item->slug = Str::slug($characterData['name'], '-');
             $item->save();
         }
     }

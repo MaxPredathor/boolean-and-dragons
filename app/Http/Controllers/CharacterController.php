@@ -33,12 +33,14 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
+        $slug = Character::getSlug($formData['name'], '-');
+        $formData['slug'] = $slug;
         if ($request->hasFile('image')) {
             $img_path = Storage::put('uploads_character', $formData['image']);
             $formData['image'] = $img_path;
         }
         $newCharacter = Character::create($formData);
-        return to_route('admin.characters.show', $newCharacter->id)->with('success', 'Character created successfully' . $newCharacter->name);
+        return to_route('admin.characters.show', $newCharacter->slug)->with('success', 'Character created successfully' . $newCharacter->name);
     }
 
     /**
@@ -63,6 +65,12 @@ class CharacterController extends Controller
     public function update(UpdateCharacterRequest $request, Character $character)
     {
         $formData = $request->validated();
+        if ($character->title !== $formData['name']) {
+            $slug = Character::getSlug($formData['name'], '-');
+        } else {
+            $slug = $character->slug;
+        }
+        $formData['slug'] = $slug;
         if ($request->hasFile('image')) {
             if (Storage::exists($character->image)) {
                 Storage::delete($character->image);
@@ -71,7 +79,7 @@ class CharacterController extends Controller
             $formData['image'] = $img_path;
         }
         $character->update($formData);
-        return redirect()->route('admin.characters.show', $character->id)->with('success', 'Character modified successfully' . $character->name);
+        return redirect()->route('admin.characters.show', $character->slug)->with('success', 'Character modified successfully' . $character->name);
     }
 
     /**

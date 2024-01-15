@@ -1,3 +1,4 @@
+@include('layouts.partials.header')
 @extends('layouts.app')
 
 @section('content')
@@ -16,7 +17,7 @@
                             alt="{{ $type->name }}">
                         <div class="card-body d-flex justify-content-between">
                             <h3 class="card-title">{{ $type->name }}</h3>
-                            <a href="{{ route('admin.types.show', $type->id) }}" class="btn btn-danger">View More</a>
+                            <a href="{{ route('admin.types.show', $type->slug) }}" class="btn btn-danger">View More</a>
                         </div>
                     </div>
                 </div>

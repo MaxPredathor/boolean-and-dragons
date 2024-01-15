@@ -1,3 +1,4 @@
+@include('layouts.partials.header')
 @extends('layouts.app')
 @section('content')
 
@@ -18,18 +19,13 @@
                 </div>
             @endif
             <div class="row">
-                <form action="{{ route('admin.items.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.items.update', $item->slug) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div>
                         <label for="name">Name:</label>
                         <input value="{{ old('name', $item->name) }}" required class="form-control my-1" type="text"
                             id="name" name="name" placeholder="{{ $item->name }}">
-                    </div>
-                    <div>
-                        <label for="slug">Slug:</label>
-                        <input value="{{ old('slug', $item->slug) }}" required class="form-control my-1" type="text"
-                            id="slug" name="slug" placeholder="{{ $item->slug }}">
                     </div>
                     <div>
                         <label for="category">Category</label>

@@ -1,8 +1,10 @@
+@include('layouts.partials.header')
 @extends('layouts.app')
 @section('content')
     <main>
         <section class="container">
-            <form action="{{ route('admin.characters.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.characters.store', $character->slug) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -63,10 +65,9 @@
                         <img class="w-25" id="uploadPreview" src="{{ asset('storage/' . $character->image) }}"
                             alt="{{ $character->name }}">
                     </div>
-                    <input value="{{ old('image') }}" type="file"
-                        class="form-control @error('image') is-invalid
-                    @enderror" id="image"
-                        name="image">
+                    <input type="file" class="form-control @error('image') is-invalid
+                    @enderror"
+                        id="image" name="image">
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
