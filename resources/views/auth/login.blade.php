@@ -15,8 +15,8 @@
             const button = document.getElementById('login-button');
             button.addEventListener('click', () => {
                 document.getElementById('overlay').style.display = 'none';
-                // document.getElementById('login-sound').play();
-                // document.getElementById('login-sound').volume = 0.2;
+                document.getElementById('login-sound').play();
+                document.getElementById('login-sound').volume = 0.2;
                 document.querySelector('video').play();
             });
         </script>
