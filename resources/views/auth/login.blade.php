@@ -15,7 +15,7 @@
             const button = document.getElementById('login-button');
             button.addEventListener('click', () => {
                 document.getElementById('overlay').style.display = 'none';
-                // document.getElementById('login-sound').play();
+                document.getElementById('login-sound').play();
                 document.getElementById('login-sound').volume = 0.2;
                 document.querySelector('video').play();
             });
@@ -67,15 +67,15 @@
                     </div> --}}
 
 
-                    {{-- <button type="submit" class="btn btn-primary">
-                        {{ __('Login') }}
+                    <button type="submit" class="btn btn-primary">
+                        ('Login')
                     </button>
 
                     @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
-                    @endif --}}
+                    @endif
 
                 </form>
             </div>

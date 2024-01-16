@@ -14,12 +14,12 @@
                     <form action="{{ route('admin.types.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input required class="form-control my-1 @error('name') is-invalid @enderror" type="text"
-                            id="name" name="name" placeholder="name">
+                            id="name" name="name" placeholder="Name">
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                         <textarea required rows="8" class="form-control my-1 @error('series') is-invalid @enderror" type="text"
-                            id="desc" name="desc" placeholder="description"></textarea>
+                            id="desc" name="desc" placeholder="Description"></textarea>
                         @error('desc')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
