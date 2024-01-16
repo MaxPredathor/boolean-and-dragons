@@ -38,10 +38,12 @@ class TypeController extends Controller
         if ($request->hasFile('image')) {
             $path = Storage::put('uploads_types', $formdata['image']);
             $formdata['image'] = $path;
+        } else {
+            $formdata['image'] = null;
         }
         $type = Type::create($formdata);
 
-        return to_route('admin.types.index')->with('message', "The Type $type->name has been successfully created");
+        return to_route('admin.types.index')->with('message', "The Class $type->name has been successfully created");
     }
 
     /**
@@ -91,6 +93,6 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
         $type->delete();
-        return to_route('admin.types.index')->with('message', "The comic $type->name has been successfully deleted");
+        return to_route('admin.types.index')->with('message', "The Class $type->name has been successfully deleted");
     }
 }

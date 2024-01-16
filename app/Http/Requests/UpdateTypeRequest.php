@@ -23,8 +23,8 @@ class UpdateTypeRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'desc' => 'required|min:255',
-            'image' => 'image'
+            'desc' => 'required|min:5',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages()
@@ -33,8 +33,9 @@ class UpdateTypeRequest extends FormRequest
         return [
             'name.required' => 'You have to insert a name',
             'desc.required' => 'You have to insert a description',
-            'desc.min' => 'this field must have at least :min characters',
-            'image.image' => 'You have to insert an image'
+            'desc.min' => 'The description field must have at least :min characters',
+            'image.mimes' => 'The file must be in jpeg,png,jpg,gif,svg format',
+            'image.max' => 'The image file must not exceed :max kilobytes',
         ];
 
     }

@@ -24,7 +24,7 @@ class StoreTypeRequest extends FormRequest
         return [
             'name' => 'required',
             'desc' => 'required|min:5',
-            'image' => 'image',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|nullable',
         ];
     }
     public function messages()
