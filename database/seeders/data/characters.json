@@ -5,8 +5,8 @@
         "attack": 5,
         "defence": 10,
         "speed": 20,
-        "life": 100
-
+        "life": 100,
+        "type_id": 1
     },
     {
         "name": "Iaoco",
@@ -14,7 +14,8 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100
+        "life": 100,
+        "type_id": 2
     },
     {
         "name": "Makkusu",
@@ -22,7 +23,8 @@
         "attack": 20,
         "defence": 10,
         "speed": 5,
-        "life": 100
+        "life": 100,
+        "type_id": 3
     },
     {
         "name": "Vinicio Mio",
@@ -30,7 +32,8 @@
         "attack": 5,
         "defence": 20,
         "speed": 10,
-        "life": 100
+        "life": 100,
+        "type_id": 4
     },
     {
         "name": "Ioderis",
@@ -38,7 +41,8 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100
+        "life": 100,
+        "type_id": 5
     },
     {
         "name": "Moonetta",
@@ -46,7 +50,8 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100
+        "life": 100,
+        "type_id": 6
     },
     {
         "name": "Il Cappellaio Matto",
@@ -54,7 +59,8 @@
         "attack": 20,
         "defence": 5,
         "speed": 15,
-        "life": 100
+        "life": 100,
+        "type_id": 7
     },
     {
         "name": "Wordpress Raid Boss",
@@ -62,6 +68,7 @@
         "attack": 5,
         "defence": 30,
         "speed": 5,
-        "life": 100
+        "life": 100,
+        "type_id": 8
     }
 ]

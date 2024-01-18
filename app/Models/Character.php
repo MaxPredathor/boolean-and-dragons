@@ -17,7 +17,8 @@ class Character extends Model
         'speed',
         'life',
         'image',
-        'slug'
+        'slug',
+        'type_id'
     ];
     public static function getSlug($name)
     {
