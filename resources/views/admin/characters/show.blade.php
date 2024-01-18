@@ -48,6 +48,11 @@
                                 </div>
                             </div>
                             <div>
+                                <p>Type: {{ $character->type->name }}</p>
+                                <img class="w-25" src="{{ asset('storage/' . $character->type->image) }}"
+                                    alt="{{ $character->type->name }}">
+                            </div>
+                            <div>
                                 <img class="w-50" src="{{ asset('storage/' . $character->image) }}"
                                     alt="{{ $character->name }}">
                             </div>
