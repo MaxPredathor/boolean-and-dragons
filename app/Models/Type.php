@@ -20,4 +20,9 @@ class Type extends Model
         }
         return $slug;
     }
+
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
 }

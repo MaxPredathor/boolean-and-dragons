@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\Character;
 
 
 class Item extends Model
@@ -20,6 +21,10 @@ class Item extends Model
         'cost',
         'image'
     ];
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
     public static function getSlug($name)
     {
         $slug = Str::of($name)->slug('-');

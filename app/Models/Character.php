@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\Item;
 
 class Character extends Model
 {
@@ -20,6 +21,10 @@ class Character extends Model
         'slug',
         'type_id'
     ];
+    public function items()
+    {
+        return $this->belongsToMany(Item::class);
+    }
     public static function getSlug($name)
     {
         $slug = Str::of($name)->slug('-');
@@ -29,5 +34,10 @@ class Character extends Model
             $count++;
         }
         return $slug;
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }
