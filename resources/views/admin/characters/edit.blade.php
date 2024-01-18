@@ -15,6 +15,21 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+                <div>
+                    @foreach ($types as $type)
+                        <input id="type{{ $type->id }}"
+                            class="form-control @error('type') is-invalid
+                        @enderror" type="radio"
+                            name="type" value="{{ $type->id }}">
+                        <label for="type{{ $type->id }}">
+                            <img class="w-25" src="{{ asset('storage/' . $type->image) }}" alt="{{ $type->name }}">
+                            <p>{{ $type->name }}</p>
+                        </label>
+                    @endforeach
+                    @error('type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control @error('description') is-invalid
