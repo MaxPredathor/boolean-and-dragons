@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
 use Illuminate\Support\Str;
+use App\Models\Type;
+use App\Models\Item;
 
 class CharacterSeeder extends Seeder
 {
@@ -14,6 +16,8 @@ class CharacterSeeder extends Seeder
      */
     public function run(): void
     {
+        $items = Item::all();
+        $types = Type::all();
         $json = file_get_contents(__DIR__ . '/data/characters.json');
         $content =  json_decode($json, true);
         foreach ($content as $characterData) {
@@ -28,6 +32,7 @@ class CharacterSeeder extends Seeder
             $item->type_id = $characterData['type_id'];
             $item->slug = Str::slug($characterData['name'], '-');
             $item->save();
+            $item->items()->sync($items->pluck('id')->random(3));
         }
     }
 }

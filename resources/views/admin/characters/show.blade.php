@@ -56,6 +56,20 @@
                                 <img class="w-50" src="{{ asset('storage/' . $character->image) }}"
                                     alt="{{ $character->name }}">
                             </div>
+                            <div>
+                                <h2>Items: </h2>
+                                <div class="row">
+                                    @foreach ($character->items as $item)
+                                        <a href="{{ route('admin.items.show', $item->slug) }}"
+                                            class="btn btn-dark col-3 mx-2">
+                                            <div>
+                                                <img class="w-100" src="{{ asset('storage/' . $item->image) }}"
+                                                    alt="{{ $item->name }}">
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                </div>
+                            </div>
                             <p class="desc py-4">{{ $character->description }}</p>
                             <a href="{{ route('admin.characters.index') }}" class="btn btn-primary">Return</a>
                             <a href="{{ route('admin.characters.edit', $character->slug) }}"

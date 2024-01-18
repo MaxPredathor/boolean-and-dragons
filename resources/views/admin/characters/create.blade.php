@@ -15,6 +15,7 @@
                     @enderror
                 </div>
                 <div class="row">
+                    <h2>Type</h2>
                     @foreach ($types as $type)
                         <div class="col-2">
                             <input id="type{{ $type->id }}"
@@ -27,6 +28,57 @@
                             </label>
                         </div>
                     @endforeach
+                    @error('type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="row">
+                    <h2>Items</h2>
+                    @foreach ($itemsSorted as $key => $itemType)
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ $key }}" aria-expanded="true"
+                                        aria-controls="collapse{{ $key }}">
+                                        {{ $itemType[0]->category }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $key }}" class="accordion-collapse collapse show"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body row">
+                                        @foreach ($itemType as $item)
+                                            <div class="col-2">
+                                                <input id="item{{ $item->id }}"
+                                                    class="form-checkbox @error('item') is-invalid
+                                                @enderror"
+                                                    type="checkbox" name="items[]" value="{{ $item->id }}">
+                                                <label for="item{{ $item->id }}">
+                                                    <img class="w-25" src="{{ asset('storage/' . $item->image) }}"
+                                                        alt="{{ $item->name }}">
+                                                    <p>{{ $item->name }}</p>
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    {{-- @foreach ($items as $item)
+                        <div class="col-1">
+                            <input id="item{{ $item->id }}"
+                                class="form-checkbox @error('item') is-invalid
+                            @enderror"
+                                type="checkbox" name="items" value="{{ $item->id }}">
+                            <label for="item{{ $item->id }}">
+                                <img class="w-25" src="{{ asset('storage/' . $item->image) }}"
+                                    alt="{{ $item->name }}">
+                                <p>{{ $item->name }}</p>
+                            </label>
+                        </div>
+                    @endforeach --}}
                     @error('type')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
