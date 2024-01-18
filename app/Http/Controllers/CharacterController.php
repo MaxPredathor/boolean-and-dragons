@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Character;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Type;
+use App\Models\Item;
 
 class CharacterController extends Controller
 {
@@ -24,7 +26,9 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('admin.characters.create');
+        $types = Type::all();
+        $items = Item::all();
+        return view('admin.characters.create', compact('types', 'items'));
     }
 
     /**
@@ -39,7 +43,12 @@ class CharacterController extends Controller
             $img_path = Storage::put('uploads_character', $formData['image']);
             $formData['image'] = $img_path;
         }
+        $formData['type_id'] = $request->type_id;
         $newCharacter = Character::create($formData);
+
+        if ($request->has('items')) {
+            $newCharacter->items()->attach($request->items);
+        }
         return to_route('admin.characters.show', $newCharacter->slug)->with('success', 'Character created successfully' . $newCharacter->name);
     }
 
@@ -56,7 +65,9 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view('admin.characters.edit', compact('character'));
+        $types = Type::all();
+        $items = Item::all();
+        return view('admin.characters.edit', compact('character', 'types', 'items'));
     }
 
     /**
