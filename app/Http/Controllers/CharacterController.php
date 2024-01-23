@@ -76,7 +76,16 @@ class CharacterController extends Controller
     {
         $types = Type::all();
         $items = Item::all();
-        return view('admin.characters.edit', compact('character', 'types', 'items'));
+        $itemSorted = [];
+        $simpleMelee = Item::where('category', 'Simple Melee Weapons')->get();
+        $simpleRanged = Item::where('category', 'Simple Ranged Weapons')->get();
+        $martialMelee = Item::where('category', 'Martial Melee Weapons')->get();
+        $martialRanged = Item::where('category', 'Martial Ranged Weapons')->get();
+        $itemsSorted[] = $simpleMelee;
+        $itemsSorted[] = $simpleRanged;
+        $itemsSorted[] = $martialMelee;
+        $itemsSorted[] = $martialRanged;
+        return view('admin.characters.edit', compact('character', 'types', 'items', 'itemsSorted'));
     }
 
     /**

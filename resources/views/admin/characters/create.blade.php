@@ -38,13 +38,13 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapse{{ $key }}" aria-expanded="true"
                                         aria-controls="collapse{{ $key }}">
                                         {{ $itemType[0]->category }}
                                     </button>
                                 </h2>
-                                <div id="collapse{{ $key }}" class="accordion-collapse collapse show"
+                                <div id="collapse{{ $key }}" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body row">
                                         @foreach ($itemType as $item)
@@ -52,7 +52,9 @@
                                                 <input id="item{{ $item->id }}"
                                                     class="form-checkbox @error('item') is-invalid
                                                 @enderror"
-                                                    type="checkbox" name="items[]" value="{{ $item->id }}">
+                                                    type="checkbox" name="items[]"
+                                                    @if (in_array($item->id, old('items', []))) checked @endif
+                                                    value="{{ $item->id }}">
                                                 <label for="item{{ $item->id }}">
                                                     <img class="w-25" src="{{ asset('storage/' . $item->image) }}"
                                                         alt="{{ $item->name }}">
@@ -66,19 +68,6 @@
                         </div>
                     @endforeach
 
-                    {{-- @foreach ($items as $item)
-                        <div class="col-1">
-                            <input id="item{{ $item->id }}"
-                                class="form-checkbox @error('item') is-invalid
-                            @enderror"
-                                type="checkbox" name="items" value="{{ $item->id }}">
-                            <label for="item{{ $item->id }}">
-                                <img class="w-25" src="{{ asset('storage/' . $item->image) }}"
-                                    alt="{{ $item->name }}">
-                                <p>{{ $item->name }}</p>
-                            </label>
-                        </div>
-                    @endforeach --}}
                     @error('type')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
