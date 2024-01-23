@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CharacterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/types', [TypeController::class, 'index']);
+Route::get('/items', [ItemController::class, 'index']);
+Route::get('/characters', [CharacterController::class, 'index']);
+Route::get('/characters/{slug}', [CharacterController::class, 'show']);
+Route::get('/items/{slug}', [ItemController::class, 'show']);
+Route::get('/types/{slug}', [TypeController::class, 'show']);
