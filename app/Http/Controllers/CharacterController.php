@@ -46,7 +46,7 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $formData = $request->validated();
-        $slug = Character::getSlug($formData['name'], '-');
+        $slug = Character::getSlug($formData['name']);
         $formData['slug'] = $slug;
         if ($request->hasFile('image')) {
             $img_path = Storage::put('uploads_character', $formData['image']);
@@ -95,7 +95,7 @@ class CharacterController extends Controller
     {
         $formData = $request->validated();
         if ($character->title !== $formData['name']) {
-            $slug = Character::getSlug($formData['name'], '-');
+            $slug = Character::getSlug($formData['name']);
         } else {
             $slug = $character->slug;
         }
