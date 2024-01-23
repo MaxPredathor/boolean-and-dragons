@@ -54,7 +54,7 @@
                                                     class="form-checkbox @error('item') is-invalid
                                                 @enderror"
                                                     type="checkbox" name="items[]"
-                                                    @if (in_array($item->id, old('items', []))) checked @endif
+                                                    @if (in_array($item->id, $character->items->pluck('id')->toArray())) checked @endif
                                                     value="{{ $item->id }}">
                                                 <label for="item{{ $item->id }}">
                                                     <img class="w-25" src="{{ asset('storage/' . $item->image) }}"
