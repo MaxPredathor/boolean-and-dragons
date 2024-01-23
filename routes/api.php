@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TypeController;
 use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\CharacterController;
+use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,6 @@ Route::get('/characters', [CharacterController::class, 'index']);
 Route::get('/characters/{slug}', [CharacterController::class, 'show']);
 Route::get('/items/{slug}', [ItemController::class, 'show']);
 Route::get('/types/{slug}', [TypeController::class, 'show']);
+
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/register', [RegisterController::class, 'register']);

@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Hash;
+
+class LoginController extends Controller
+{
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            return response()->json([
+                'status' => true,
+                'message' => 'User logged in successfully',
+                'name' => Auth::user()->name,
+                'username' => Auth::user()->username
+            ]);
+        }
+        return response()->json([
+            'status' => false,
+            'message' => 'Invalid email or password (or maybe you are the invalid one)'
+        ]);
+    }
+}
