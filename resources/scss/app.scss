@@ -1,13 +1,18 @@
 @use "./partials/variables" as *;
 
+$fa-font-path: "../fonts/webfonts" !default;
+
 //! HEADER STYLE
 @use "./partials/header" as *;
 
-$fa-font-path: "../fonts/webfonts" !default;
+
 //! HOME NOT LOGGED
 @use "./partials/home-not-logged" as *;
 
-$fa-font-path: "../fonts/webfonts" !default;
+//! HOME LOGGED
+@use "./partials/home-logged" as *;
+
+
 
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
@@ -34,7 +39,7 @@ a{
     background-image: url('../../public/images/background_images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
-   filter: grayscale(90%);
+//    filter: grayscale(90%);
     
     #lateral{
         color: black;
@@ -74,7 +79,7 @@ a{
         }
     }
     main{
-        width: 90%;
+        max-width: 90%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.658) ;
         overflow-y: auto;

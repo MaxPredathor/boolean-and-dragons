@@ -14,6 +14,8 @@
     @vite(['resources/js/app.js'])
     {{-- librerie js --}}
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -38,7 +40,7 @@
                             Login for more
                         </div>
                         @else
-                        <h3>Navigation menu</h3>
+                        <h3 class="fs-5 text-center">{{ Auth::user()->name}}'s menu</h3>
                         <div class="col">
                             <h5>Characters</h5>
                             <ul>
