@@ -1,5 +1,8 @@
 @use "./partials/variables" as *;
 
+//! HEADER STYLE
+@use "./partials/header" as *;
+
 $fa-font-path: "../fonts/webfonts" !default;
 
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
