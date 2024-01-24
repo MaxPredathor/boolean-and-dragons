@@ -4,6 +4,10 @@
 @use "./partials/header" as *;
 
 $fa-font-path: "../fonts/webfonts" !default;
+//! HOME NOT LOGGED
+@use "./partials/home-not-logged" as *;
+
+$fa-font-path: "../fonts/webfonts" !default;
 
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
@@ -33,11 +37,15 @@ a{
    filter: grayscale(90%);
     
     #lateral{
+        color: black;
         width: 10%;
         height: 100vh;
         background-color: transparent ;
         border-bottom: 3px solid white;
         backdrop-filter: blur(10px);
+        a{
+            color: black;
+        }
       #my-top-lateral{
         height: 8vh;
         border-bottom: 3px solid white;

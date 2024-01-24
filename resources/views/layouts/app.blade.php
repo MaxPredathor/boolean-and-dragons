@@ -32,10 +32,10 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row flex-column align-items-center justify-content-center">
+                    <div class="m-auto row flex-column align-items-center justify-content-center">
                         @if(!Auth::check())
-                        <div class="col">
-                            Login to see more
+                        <div class="col d-flex flex-column justify-content-center align-items-center">
+                            Login for more
                         </div>
                         @else
                         <h3>Navigation menu</h3>
