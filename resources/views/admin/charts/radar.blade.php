@@ -10,13 +10,37 @@
             datasets: [{
                 label: '# of Subscriptions',
                 data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 2.5
+                borderWidth: 2.5,
+                fill: true,
+                color: 'white',
+                pointBackgroundColor: '#fff',
+                pointBorderColor: 'rgb(255, 99, 132)'
             }]
         },
         options: {
+            elements: {
+                line: {
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                }
+            },
             scales: {
+                r: {
+                    ticks: {
+                        backgroundColor: 'transparent',
+                    },
+                    angleLines: {
+                        color: 'white'
+                    },
+                    grid: {
+                        color: 'white'
+                    }
+                },
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    grid: {
+                        tickColor: 'white'
+                    }
                 }
             }
         }

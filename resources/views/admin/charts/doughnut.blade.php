@@ -11,12 +11,23 @@
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3],
-                borderWidth: 2.5
+                borderWidth: 0,
+
+
             }]
         },
         options: {
+            color: 'white',
             scales: {
+                x: {
+                    grid: {
+                        color: 'white'
+                    }
+                },
                 y: {
+                    grid: {
+                        color: 'white'
+                    },
                     beginAtZero: true
                 }
             }

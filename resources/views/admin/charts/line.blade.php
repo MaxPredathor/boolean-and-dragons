@@ -14,8 +14,17 @@
             }]
         },
         options: {
+            color: 'white',
             scales: {
+                x: {
+                    grid: {
+                        color: 'white'
+                    }
+                },
                 y: {
+                    grid: {
+                        color: 'white'
+                    },
                     beginAtZero: true
                 }
             }
