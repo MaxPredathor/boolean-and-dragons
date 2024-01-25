@@ -80,7 +80,9 @@
             </section>
             <main>
                 @include('layouts.partials.header')
-                @yield('content')
+                <div id="main-content">
+                    @yield('content')
+                </div>
             </main>
         </div>
     </div>

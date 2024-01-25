@@ -77,8 +77,13 @@ a {
         width: calc(100% - 150px);
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.658);
-        overflow-y: auto;
+        #main-content {
+            width: 100%;
+            height: calc(100% - 8vh);
+            overflow-y: auto;
+        }
     }
+   
 }
 
 .icon-square {
