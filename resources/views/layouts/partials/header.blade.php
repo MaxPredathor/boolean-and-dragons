@@ -3,6 +3,11 @@
         <div class="ms-5 fst-italic">
             <h1>Boolck-Office Management</h1>
         </div>
+        @if(Auth::check())
+        <a href="{{ route('admin.characters.index') }}">Characters</a>
+        <a href="{{ route('admin.types.index') }}">Types</a>
+        <a href="{{ route('admin.items.index') }}">Items</a>
+        @endif
         <ul class="navbar-nav ml-auto me-5">
             <!-- Authentication Links -->
             @guest

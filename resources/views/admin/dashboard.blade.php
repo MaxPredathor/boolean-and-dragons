@@ -22,12 +22,42 @@
         </div>
         <div class="col-2">
             <div class="alerts">
-                Alerts
+                <div class="vertical">
+                    <div class="alert-1">
+                        <h5 class="text-center">First alert</h5>
+                        <ul>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                        </ul>
+                    </div>
+                    <div class="alert-2">
+                        <h5 class="text-center">Second alert</h5>
+                        <ul>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                        </ul>
+                    </div>
+                    <div class="alert-3">
+                        <h5 class="text-center">Third alert</h5>
+                        <ul>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                            <li>Alert</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+</div>
 
-    <!-- <div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
         <div class="col">
              <div class="card">
                 <div class="card-header">{{ __('User Dashboard') }}</div>
