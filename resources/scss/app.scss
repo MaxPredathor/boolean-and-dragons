@@ -2,6 +2,15 @@
 
 $fa-font-path: "../fonts/webfonts" !default;
 
+//! HEADER STYLE
+@use "./partials/header" as *;
+
+//! HOME NOT LOGGED
+@use "./partials/home-not-logged" as *;
+
+//! HOME LOGGED
+@use "./partials/home-logged" as *;
+
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/solid";
@@ -13,18 +22,63 @@ $fa-font-path: "../fonts/webfonts" !default;
     font-family: "Vecna";
     src: url(/fonts/Vecna-oppx.ttf) format("truetype");
 }
-
-h1 {
-    color: $text-color;
+ul {
+    list-style: none;
 }
-
-main {
-    margin: 0;
-    padding: 0;
+a {
+    text-decoration: none;
 }
-body {
-    margin: 0;
-    padding: 0;
+#app {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-image: url("../../public/images/background_images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    //    filter: grayscale(90%);
+    #lateral {
+        color: black;
+        width: 150px;
+        height: 100vh;
+        background-color: transparent;
+        border-bottom: 3px solid white;
+        backdrop-filter: blur(10px);
+        a {
+            color: black;
+        }
+        #my-top-lateral {
+            height: 8vh;
+            border-bottom: 3px solid white;
+            border-right: 3px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .my-img-cont {
+                width: 70px;
+                height: 50px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .container {
+            width: 100%;
+            height: 92vh;
+            border-right: 3px solid white;
+            .row {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    main {
+        width: calc(100% - 150px);
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.658);
+        overflow-y: auto;
+    }
 }
 
 .icon-square {
@@ -32,170 +86,170 @@ body {
     height: 50px;
 }
 
-#login {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    font-family: "Vecna", sans-serif;
+// #login {
+//     width: 100%;
+//     height: 100vh;
+//     overflow: hidden;
+//     position: relative;
+//     font-family: "Vecna", sans-serif;
 
-    video {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-    }
+//     video {
+//         width: 100%;
+//         height: 100vh;
+//         object-fit: cover;
+//     }
 
-    #login-card {
-        width: 500px;
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        transform: translate(-50%, -20%);
+//     #login-card {
+//         width: 500px;
+//         position: absolute;
+//         top: 50%;
+//         left: 20%;
+//         transform: translate(-50%, -20%);
 
-        .small-container {
-            // width: 50%;
-            margin-bottom: 20px;
+//         .small-container {
+//             // width: 50%;
+//             margin-bottom: 20px;
 
-            .pre-input {
-                width: 306px;
-                height: 56px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                clip-path: polygon(8% 5%, 92% 5%, 99% 50%, 92% 95%, 8% 95%, 1% 50%);
-                background: rgb(115, 84, 67);
-                background: linear-gradient(
-                    125deg,
-                    rgba(115, 84, 67, 1) 0%,
-                    rgba(102, 73, 53, 1) 21%,
-                    rgba(199, 184, 142, 1) 50%,
-                    rgba(102, 73, 53, 1) 76%,
-                    rgba(115, 84, 67, 1) 100%
-                );
-                -webkit-box-shadow: 0 10px 17.5px 4.5px #262222;
-                -moz-box-shadow: 0 10px 17.5px 4.5px #262222;
-                box-shadow: 0 10px 17.5px 4.5px #262222;
+//             .pre-input {
+//                 width: 306px;
+//                 height: 56px;
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
+//                 clip-path: polygon(8% 5%, 92% 5%, 99% 50%, 92% 95%, 8% 95%, 1% 50%);
+//                 background: rgb(115, 84, 67);
+//                 background: linear-gradient(
+//                     125deg,
+//                     rgba(115, 84, 67, 1) 0%,
+//                     rgba(102, 73, 53, 1) 21%,
+//                     rgba(199, 184, 142, 1) 50%,
+//                     rgba(102, 73, 53, 1) 76%,
+//                     rgba(115, 84, 67, 1) 100%
+//                 );
+//                 -webkit-box-shadow: 0 10px 17.5px 4.5px #262222;
+//                 -moz-box-shadow: 0 10px 17.5px 4.5px #262222;
+//                 box-shadow: 0 10px 17.5px 4.5px #262222;
 
-                input {
-                    font-size: 1.4em;
-                    width: 300px;
-                    height: 50px;
-                    text-align: center;
-                    color: white !important;
-                    clip-path: polygon(8% 5%, 92% 5%, 99% 50%, 92% 95%, 8% 95%, 1% 50%);
-                    background: rgb(38, 28, 23);
-                    background: linear-gradient(
-                        125deg,
-                        rgba(38, 28, 23, 1) 0%,
-                        rgba(46, 32, 24, 1) 4%,
-                        rgba(72, 51, 37, 1) 30%,
-                        rgba(46, 32, 24, 0.7987570028011204) 96%,
-                        rgba(38, 28, 23, 1) 100%
-                    );
-                    background: -webkit-linear-gradient(
-                        125deg,
-                        rgba(38, 28, 23, 1) 0%,
-                        rgba(46, 32, 24, 1) 4%,
-                        rgba(72, 51, 37, 1) 30%,
-                        rgba(46, 32, 24, 0.7987570028011204) 96%,
-                        rgba(38, 28, 23, 1) 100%
-                    );
+//                 input {
+//                     font-size: 1.4em;
+//                     width: 300px;
+//                     height: 50px;
+//                     text-align: center;
+//                     color: white !important;
+//                     clip-path: polygon(8% 5%, 92% 5%, 99% 50%, 92% 95%, 8% 95%, 1% 50%);
+//                     background: rgb(38, 28, 23);
+//                     background: linear-gradient(
+//                         125deg,
+//                         rgba(38, 28, 23, 1) 0%,
+//                         rgba(46, 32, 24, 1) 4%,
+//                         rgba(72, 51, 37, 1) 30%,
+//                         rgba(46, 32, 24, 0.7987570028011204) 96%,
+//                         rgba(38, 28, 23, 1) 100%
+//                     );
+//                     background: -webkit-linear-gradient(
+//                         125deg,
+//                         rgba(38, 28, 23, 1) 0%,
+//                         rgba(46, 32, 24, 1) 4%,
+//                         rgba(72, 51, 37, 1) 30%,
+//                         rgba(46, 32, 24, 0.7987570028011204) 96%,
+//                         rgba(38, 28, 23, 1) 100%
+//                     );
 
-                    &:-webkit-autofill {
-                        background: rgb(38, 28, 23) !important;
-                        background: linear-gradient(
-                            125deg,
-                            rgba(38, 28, 23, 1) 0%,
-                            rgba(46, 32, 24, 1) 4%,
-                            rgba(72, 51, 37, 1) 30%,
-                            rgba(46, 32, 24, 0.7987570028011204) 96%,
-                            rgba(38, 28, 23, 1) 100% !important
-                        );
-                        background: -webkit-linear-gradient(
-                            125deg,
-                            rgba(38, 28, 23, 1) 0%,
-                            rgba(46, 32, 24, 1) 4%,
-                            rgba(72, 51, 37, 1) 30%,
-                            rgba(46, 32, 24, 0.7987570028011204) 96%,
-                            rgba(38, 28, 23, 1) 100% !important
-                        );
-                    }
+//                     &:-webkit-autofill {
+//                         background: rgb(38, 28, 23) !important;
+//                         background: linear-gradient(
+//                             125deg,
+//                             rgba(38, 28, 23, 1) 0%,
+//                             rgba(46, 32, 24, 1) 4%,
+//                             rgba(72, 51, 37, 1) 30%,
+//                             rgba(46, 32, 24, 0.7987570028011204) 96%,
+//                             rgba(38, 28, 23, 1) 100% !important
+//                         );
+//                         background: -webkit-linear-gradient(
+//                             125deg,
+//                             rgba(38, 28, 23, 1) 0%,
+//                             rgba(46, 32, 24, 1) 4%,
+//                             rgba(72, 51, 37, 1) 30%,
+//                             rgba(46, 32, 24, 0.7987570028011204) 96%,
+//                             rgba(38, 28, 23, 1) 100% !important
+//                         );
+//                     }
 
-                    &::placeholder {
-                        color: lightgrey !important;
-                    }
-                }
-            }
-            .login-button {
-                width: 100px;
-                height: 40px;
-            }
-        }
-        #remember {
-            input {
-                background-color: #493628 !important;
-                border: 1px solid #c5b68c;
-                width: 20px;
-                height: 20px;
-            }
-            label {
-                font-family: "Vecna";
-            }
-        }
-    }
+//                     &::placeholder {
+//                         color: lightgrey !important;
+//                     }
+//                 }
+//             }
+//             .login-button {
+//                 width: 100px;
+//                 height: 40px;
+//             }
+//         }
+//         #remember {
+//             input {
+//                 background-color: #493628 !important;
+//                 border: 1px solid #c5b68c;
+//                 width: 20px;
+//                 height: 20px;
+//             }
+//             label {
+//                 font-family: "Vecna";
+//             }
+//         }
+//     }
 
-    #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgb(0, 0, 0);
-        z-index: 100;
+//     #overlay {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100vh;
+//         background-color: rgb(0, 0, 0);
+//         z-index: 100;
 
-        button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-}
+//         button {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -50%);
+//         }
+//     }
+// }
 
-.box {
-    width: 251px;
-    height: 57px;
-}
+// .box {
+//     width: 251px;
+//     height: 57px;
+// }
 
-.box .base {
-    position: fixed;
-    width: 251px;
-    height: 57px;
-    top: 0;
-    left: 0;
-    box-shadow: 0px 12px 28px 8px #00000059, inset 0px -7px 1px #9a4212, inset 0px -6px 0px #321205,
-        inset 0px 8px 0px #ffe8cdcc, inset 0px 7px 0px #b4a284;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.7) 48.44%,
-        rgba(255, 255, 255, 0) 100%
-    );
-}
-#my-login-button {
-    font-size: 1.4em;
-    transform: translate(105px, 0);
-    position: relative;
-    z-index: 1000;
-    background: #493628 !important;
-}
-.my-password {
-    transform: translate(58px, 0);
-}
-.my-square {
-    transform: translate(101px, -63px);
-    width: 108px !important;
-    height: 46px !important;
-    position: absolute;
-    z-index: 999;
-}
+// .box .base {
+//     position: fixed;
+//     width: 251px;
+//     height: 57px;
+//     top: 0;
+//     left: 0;
+//     box-shadow: 0px 12px 28px 8px #00000059, inset 0px -7px 1px #9a4212, inset 0px -6px 0px #321205,
+//         inset 0px 8px 0px #ffe8cdcc, inset 0px 7px 0px #b4a284;
+//     background: linear-gradient(
+//         180deg,
+//         rgba(255, 255, 255, 0) 0%,
+//         rgba(255, 255, 255, 0.7) 48.44%,
+//         rgba(255, 255, 255, 0) 100%
+//     );
+// }
+// #my-login-button {
+//     font-size: 1.4em;
+//     transform: translate(105px, 0);
+//     position: relative;
+//     z-index: 1000;
+//     background: #493628 !important;
+// }
+// .my-password {
+//     transform: translate(58px, 0);
+// }
+// .my-square {
+//     transform: translate(101px, -63px);
+//     width: 108px !important;
+//     height: 46px !important;
+//     position: absolute;
+//     z-index: 999;
+// }
