@@ -7,12 +7,14 @@ use Illuminate\Database\Seeder;
 use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
+
     public function run(): void
     {
         $json = file_get_contents(__DIR__ . '/data/types.json');
@@ -22,11 +24,12 @@ class TypeSeeder extends Seeder
             $newItem = new Type();
             $newItem->image = TypeSeeder::storeimage(__DIR__ . '/images/icon_types/' . $typeData['name'] . '.jpg', $typeData['name']);
             $newItem->name = $typeData['name'];
-            $newItem->desc = $typeData['desc'];
+            $newItem->desc = Markdown::convertToHtml($typeData['desc']);
             $newItem->slug = Str::slug($typeData['name'], '-');
             $newItem->save();
         }
     }
+
 
     public static function storeimage($img, $name)
     {
