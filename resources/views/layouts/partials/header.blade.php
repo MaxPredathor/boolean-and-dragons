@@ -1,5 +1,5 @@
 <nav id="header">
-    <div class="p-0 container-fluid d-flex justify-content-between align-items-center">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class=" fst-italic">
             <h1>Boolck-Office Management</h1>
         </div>
