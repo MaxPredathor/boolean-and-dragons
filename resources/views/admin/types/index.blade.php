@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>
-        All classes</h1>
+        All types</h1>
     <a href="{{ route('admin.types.create') }}" class="btn btn-success">Add a new class</a>
     <div class="row">
         @if (session()->has('message'))

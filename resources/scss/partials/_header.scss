@@ -7,20 +7,20 @@
     .nav-link{
         color: white !important;
     }
-  .container-fluid{
-    height: 8vh;
-    #user{
-        .my-user{
-            border: 1px solid white;
-           width: 30px;
-           height: 30px;
-           text-align: center;
-          border-radius: 50%;
-        }
-        #navbarDropdown{
-            font-size: 0.8em !important;
-            padding: 5px 0 !important;
-        }
-    }
+    .container-fluid{
+      height: 8vh;
+      #user{
+          .my-user{
+              border: 1px solid white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 50%;
+          }
+          #navbarDropdown{
+              font-size: 0.8em !important;
+              padding: 5px 0 !important;
+          }
+      }
   }
 }

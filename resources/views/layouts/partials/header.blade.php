@@ -3,11 +3,6 @@
         <div class=" fst-italic">
             <h1>Boolck-Office Management</h1>
         </div>
-        <!-- @if(Auth::check())
-        <a href="{{ route('admin.characters.index') }}">Characters</a>
-        <a href="{{ route('admin.types.index') }}">Types</a>
-        <a href="{{ route('admin.items.index') }}">Items</a>
-        @endif -->
         <ul class="navbar-nav ml-auto ">
             <!-- Authentication Links -->
             @guest
@@ -21,23 +16,38 @@
             @endif
             @else
             <li id="user" class="nav-item dropdown">
-                <div class="d-flex flex-column align-items-center justify-content-center">
-                    <div class="my-user">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-6" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="me-3 d-flex flex-column align-items-center justify-content-center">
+                        <div class="my-user">
+                            <i class="fa-solid fa-home"></i>
+                        </div>
+                        <a id="navbarDropdown"
+                            class="d-flex flex-column align-items-center justify-content-center nav-link  fs-6" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            {{ __('Home')}}
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="my-user">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <a id="navbarDropdown"
+                            class="d-flex flex-column align-items-center justify-content-center nav-link fs-6" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
                 </div>
             </li>
