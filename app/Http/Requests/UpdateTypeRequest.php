@@ -25,6 +25,8 @@ class UpdateTypeRequest extends FormRequest
             'name' => 'required',
             'desc' => 'required|min:5',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'base_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
+            'ascended_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
         ];
     }
     public function messages()
