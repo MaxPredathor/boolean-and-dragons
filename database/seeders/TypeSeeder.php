@@ -24,6 +24,7 @@ class TypeSeeder extends Seeder
             $newItem = new Type();
             $newItem->image = TypeSeeder::storeimage(__DIR__ . '/images/icon_types/' . $typeData['name'] . '.jpg', $typeData['name']);
             $newItem->name = $typeData['name'];
+            $newItem->boosted_stat = $typeData['boosted_stat'];
             $newItem->desc = Markdown::convertToHtml($typeData['desc']);
             $newItem->slug = Str::slug($typeData['name'], '-');
             $newItem->base_sprite = TypeSeeder::storeSpriteBase(__DIR__ . '/images/icon_types/sprites/' . strtolower($typeData['name']) . '-base.webp', strtolower($typeData['name']));
