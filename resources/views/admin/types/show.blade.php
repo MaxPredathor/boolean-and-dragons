@@ -50,10 +50,5 @@
         {{-- <p>Description: {{ $type->desc }}</p> --}}
     </div>
 
-
-    <p id="markdown-content">{!! $htmlContent !!}</p>
-    {{-- <p>Description: {{ $type->desc }}</p> --}}
-    </div>
-
     @include('partials.modal_delete')
 @endsection

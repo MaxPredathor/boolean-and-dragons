@@ -31,7 +31,6 @@ class TypeSeeder extends Seeder
             $newItem->slug = Str::slug($typeData['name'], '-');
             $newItem->base_sprite = TypeSeeder::storeSpriteBase(__DIR__ . '/images/icon_types/sprites/' . strtolower($typeData['name']) . '-base.webp', strtolower($typeData['name']));
             $newItem->ascended_sprite = TypeSeeder::storeSpriteAscended(__DIR__ . '/images/icon_types/sprites/' . strtolower($typeData['name']) . '-ascended.webp', strtolower($typeData['name']));
-            $newItem->desc = $typeData['desc'];
             $newItem->save();
         }
     }
