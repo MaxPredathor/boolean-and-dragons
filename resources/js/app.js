@@ -15,7 +15,7 @@ buttons.forEach((button) => {
         bootstrapModal.show();
         const title = document.getElementById("modal-item-title");
         title.textContent = dataTitle;
-        const buttonDelete = modal.querySelector("button.btn-primary");
+        const buttonDelete = modal.querySelector("button.my-btn-hover");
         buttonDelete.addEventListener("click", (event) => {
             button.parentElement.submit();
         });
