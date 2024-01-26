@@ -6,53 +6,59 @@
         <ul class="navbar-nav ml-auto ">
             <!-- Authentication Links -->
             @guest
-                <li class="nav-item">
-                    <a id="loginButton" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                    <!-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> -->
-                    </li>
-                @endif
+            @if(Route::currentRouteName() != 'login')
+            <li class="my-btn-hover my-btn d-flex  align-items-center justify-content-center">
+                <a id="loginButton" class="text-white p-0 my-auto" href="{{ route('login') }}">{{
+                    __('Login') }}</a>
+            </li>
             @else
-                <li id="user" class="nav-item dropdown">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="me-3 d-flex flex-column align-items-center justify-content-center">
-                            <div class="my-user">
-                                <i class="fa-solid fa-home"></i>
-                            </div>
-                            <a id="navbarDropdown"
-                                class="d-flex flex-column align-items-center justify-content-center nav-link  fs-6"
-                                href="{{ route('admin.dashboard') }}">
-
-                                {{ __('Home') }}
-                            </a>
+            <li class="my-btn-hover my-btn d-flex  align-items-center justify-content-center">
+                <a id="loginButton" class="text-white p-0 my-auto" href="{{ route('home') }}">{{
+                    __('Go back') }}</a>
+            </li>
+            @endif
+            <!-- @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+            @endif -->
+            @else
+            <li id="user" class="nav-item dropdown">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="me-3 d-flex flex-column align-items-center justify-content-center">
+                        <div class="my-user">
+                            <i class="fa-solid fa-home"></i>
                         </div>
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="my-user">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <a id="navbarDropdown"
-                                class="d-flex flex-column align-items-center justify-content-center nav-link fs-6"
-                                href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" v-pre>
+                        <a id="navbarDropdown"
+                            class="d-flex flex-column align-items-center justify-content-center nav-link  fs-6"
+                            href="{{ route('admin.dashboard') }}">
 
-                                {{ Auth::user()->name }}
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                            {{ __('Home') }}
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="my-user">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <a id="navbarDropdown"
+                            class="d-flex flex-column align-items-center justify-content-center nav-link fs-6" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
-                </li>
+                </div>
+            </li>
             @endguest
         </ul>
     </div>
