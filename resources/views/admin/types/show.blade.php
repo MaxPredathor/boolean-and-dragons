@@ -10,7 +10,6 @@
 @section('content')
     <div class="container">
         <div>
-            prova
             <h1>Class: {{ $type->name }}</h1>
             <div class="d-flex align-items-center">
                 <a href="{{ route('admin.types.index') }}" class="btn btn-secondary me-2">Back</a>
