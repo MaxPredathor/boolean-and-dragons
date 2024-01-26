@@ -27,7 +27,8 @@ class UpdateItemRequest extends FormRequest
             'type' => 'required|min:1|max:100',
             'weight' => 'required|min:1|max:10',
             'cost' => 'required|min:1|max:10',
-            'image' => 'nullable'
+            'image' => 'nullable',
+            'damage_dice' => 'required',
         ];
     }
     public function messages()
@@ -48,6 +49,7 @@ class UpdateItemRequest extends FormRequest
             'cost.required' => 'The cost is required',
             'cost.min' => 'The cost must be at least :min characters',
             'cost.max' => 'The cost must not be greater than :max characters',
+            'damage_dice.required' => 'The damage dice is required',
         ];
     }
 }

@@ -27,6 +27,7 @@ class ItemSeeder extends Seeder
             $newItem->weight = $item['weight'];
             $newItem->cost = $item['cost'];
             $newItem->slug = Str::slug($item['name'], '-');
+            $newItem->damage_dice = $item['damage_dice'];
             $newItem->save();
         }
     }

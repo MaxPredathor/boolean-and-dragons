@@ -19,7 +19,8 @@ class Item extends Model
         'type',
         'weight',
         'cost',
-        'image'
+        'image',
+        'damage_dice',
     ];
     public function characters()
     {
