@@ -10,6 +10,7 @@
 @section('content')
     <div class="container">
         <div>
+            prova
             <h1>Class: {{ $type->name }}</h1>
             <div class="d-flex align-items-center">
                 <a href="{{ route('admin.types.index') }}" class="btn btn-secondary me-2">Back</a>
@@ -25,6 +26,7 @@
                 <h5 class="m-0">Boosted stat: </h5>
                 <p>{{ $type->boosted_stat }}</p>
             </div>
+            prova
             <div class="d-flex mt-3">
                 <div class="mx-3">
                     <p>Base sprite </p>
@@ -47,6 +49,11 @@
 
         <p id="markdown-content">{!! $htmlContent !!}</p>
         {{-- <p>Description: {{ $type->desc }}</p> --}}
+    </div>
+
+
+    <p id="markdown-content">{!! $htmlContent !!}</p>
+    {{-- <p>Description: {{ $type->desc }}</p> --}}
     </div>
 
     @include('partials.modal_delete')
