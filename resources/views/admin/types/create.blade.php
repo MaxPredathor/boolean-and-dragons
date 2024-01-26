@@ -26,7 +26,7 @@
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
                 <input required class="form-control my-1 @error('boosted_stat') is-invalid @enderror" type="text"
-                    id="boosted_stat" boosted_stat="boosted_stat" placeholder="boosted_stat">
+                    id="boosted_stat" name="boosted_stat" placeholder="Boosted stat">
                 @error('boosted_stat')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
