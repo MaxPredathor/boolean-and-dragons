@@ -8,6 +8,7 @@
                 @csrf
                 <div class="small-container py-2">
                     <div class="pre-input">
+                        <label for="email" class="form-label text-white">Insert Email</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email"
                             autofocus>
@@ -20,6 +21,7 @@
                 </div>
                 <div class="small-container py-2">
                     <div class="pre-input">
+                        <label for="password" class="form-label text-white">Insert Password</label>
                         <input id="password" type="password" placeholder="Password"
                             class="form-control @error('password') is-invalid @enderror" name="password" required
                             autocomplete="current-password">
@@ -33,7 +35,7 @@
                 <div id="remember" class="form-check my-3">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember')
                         ? 'checked' : '' }}>
-                    <label class="form-check-label mx-1" for="remember">
+                    <label class="form-check-label text-white mx-1" for="remember">
                         {{ __('Remember Me') }}
                     </label>
                 </div>
@@ -51,9 +53,11 @@
                     </div>
                 </div>
                 @if (Route::has('password.request'))
-                <a class="btn text-white my-password" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
+                <div class="small-container text-center">
+                    <a class="btn text-white my-password" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                </div>
                 @endif
             </form>
         </div>
