@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class Type extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'desc', 'image', 'slug', 'base_sprite', 'ascended_sprite'];
+    protected $fillable = ['name', 'desc', 'image', 'slug', 'base_sprite', 'ascended_sprite', 'boosted_stat'];
     public static function getSlug($name)
     {
         $slug = Str::of($name)->slug('-');
