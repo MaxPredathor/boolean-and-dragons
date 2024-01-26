@@ -25,7 +25,6 @@ class StoreTypeRequest extends FormRequest
             'name' => 'required',
             'boosted_stat' => 'required',
             'desc' => 'required|min:5',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|nullable',
             'base_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
             'ascended_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
         ];
@@ -38,7 +37,6 @@ class StoreTypeRequest extends FormRequest
             'boosted_stat.required' => 'You have to insert a boosted stat',
             'desc.required' => 'You have to insert a description',
             'desc.min' => 'This field must have at least :min characters',
-            'image.image' => 'You have to insert an image',
         ];
     }
 }

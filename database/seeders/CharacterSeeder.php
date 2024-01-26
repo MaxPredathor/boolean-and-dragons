@@ -28,7 +28,6 @@ class CharacterSeeder extends Seeder
             $item->defence = $characterData['defence'];
             $item->speed = $characterData['speed'];
             $item->life = $characterData['life'];
-            $item->image = null;
             $item->type_id = $characterData['type_id'];
             $item->slug = Str::slug($characterData['name'], '-');
             $item->save();

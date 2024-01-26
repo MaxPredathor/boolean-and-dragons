@@ -28,7 +28,6 @@ class StoreCharacterRequest extends FormRequest
             'defence' => 'required|integer',
             'speed' => 'required|integer',
             'life' => 'required|integer',
-            'image' => 'nullable|max:2048',
             'type_id' => 'required|exists:types,id',
         ];
     }
@@ -48,7 +47,6 @@ class StoreCharacterRequest extends FormRequest
             'attack.integer' => 'The attack must be an integer',
             'defence.integer' => 'The defence must be an integer',
             'speed.integer' => 'The speed must be an integer',
-            'image.max' => 'The image must not be greater than :max kilobytes',
             'type_id.exists' => 'The class does not exist',
             'type_id.required' => 'The class is required',
         ];
