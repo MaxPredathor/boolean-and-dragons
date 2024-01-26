@@ -25,7 +25,6 @@ class UpdateTypeRequest extends FormRequest
             'name' => 'required',
             'boosted_stat' => 'required',
             'desc' => 'required|min:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'base_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
             'ascended_sprite' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|nullable',
         ];
@@ -38,8 +37,6 @@ class UpdateTypeRequest extends FormRequest
             'boosted_stat.required' => 'You have to insert a boosted stat',
             'desc.required' => 'You have to insert a description',
             'desc.min' => 'The description field must have at least :min characters',
-            'image.mimes' => 'The file must be in jpeg,png,jpg,gif,svg format',
-            'image.max' => 'The image file must not exceed :max kilobytes',
         ];
 
     }
