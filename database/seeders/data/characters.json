@@ -5,7 +5,7 @@
         "attack": 5,
         "defence": 10,
         "speed": 20,
-        "life": 100,
+        "life": 35,
         "weapon": "light-hammer",
         "type_id": 1
     },
@@ -15,7 +15,7 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100,
+        "life": 35,
         "weapon": "whip",
         "type_id": 2
     },
@@ -25,7 +25,7 @@
         "attack": 20,
         "defence": 10,
         "speed": 5,
-        "life": 100,
+        "life": 35,
         "weapon": "light-hammer",
         "type_id": 3
     },
@@ -35,7 +35,7 @@
         "attack": 5,
         "defence": 20,
         "speed": 10,
-        "life": 100,
+        "life": 35,
         "weapon": "sling",
         "type_id": 4
     },
@@ -45,7 +45,7 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100,
+        "life": 35,
         "weapon": "sickle",
         "type_id": 5
     },
@@ -55,7 +55,7 @@
         "attack": 20,
         "defence": 5,
         "speed": 10,
-        "life": 100,
+        "life": 35,
         "weapon": "club",
         "type_id": 6
     },
@@ -65,7 +65,7 @@
         "attack": 20,
         "defence": 5,
         "speed": 15,
-        "life": 100,
+        "life": 35,
         "weapon": "light-hammer",
         "type_id": 7
     },
@@ -75,7 +75,7 @@
         "attack": 5,
         "defence": 30,
         "speed": 5,
-        "life": 100,
+        "life": 35,
         "weapon": "sling",
         "type_id": 8
     }
