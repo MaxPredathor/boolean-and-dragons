@@ -24,31 +24,31 @@
                 <div class="alerts">
                     <div class="vertical">
                         <div class="alert-1">
-                            <h5 class="text-center">First alert</h5>
-                            <ul>
+                            <h5 class="text-center">Reminders</h5>
+                            {{-- <ul>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="alert-2">
-                            <h5 class="text-center">Second alert</h5>
-                            <ul>
+                            <h5 class="text-center">To Do List</h5>
+                            {{-- <ul>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="alert-3">
-                            <h5 class="text-center">Third alert</h5>
-                            <ul>
+                            <h5 class="text-center">Completed Tasks</h5>
+                            {{-- <ul>
                                 <li>Alert</li>
                                 <li>Alert</li>
                                 <li>Alert</li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
