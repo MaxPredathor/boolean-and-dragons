@@ -18,7 +18,8 @@ class Character extends Model
         'speed',
         'life',
         'slug',
-        'type_id'
+        'type_id',
+        'weapon'
     ];
     public function items()
     {

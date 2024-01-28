@@ -19,7 +19,7 @@ class CharacterSeeder extends Seeder
         $items = Item::all();
         $types = Type::all();
         $json = file_get_contents(__DIR__ . '/data/characters.json');
-        $content =  json_decode($json, true);
+        $content = json_decode($json, true);
         foreach ($content as $characterData) {
             $item = new Character();
             $item->name = $characterData['name'];
@@ -28,6 +28,7 @@ class CharacterSeeder extends Seeder
             $item->defence = $characterData['defence'];
             $item->speed = $characterData['speed'];
             $item->life = $characterData['life'];
+            $item->weapon = $characterData['weapon'];
             $item->type_id = $characterData['type_id'];
             $item->slug = Str::slug($characterData['name'], '-');
             $item->save();

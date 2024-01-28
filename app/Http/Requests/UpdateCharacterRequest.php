@@ -28,6 +28,7 @@ class UpdateCharacterRequest extends FormRequest
             'defence' => 'required|integer',
             'speed' => 'required|integer',
             'life' => 'required|integer',
+            'weapon' => 'required',
             'image' => 'nullable|max:2048',
             'type_id' => 'required|exists:types,id',
         ];
@@ -40,6 +41,7 @@ class UpdateCharacterRequest extends FormRequest
             'defence.required' => 'The defense is required',
             'speed.required' => 'The speed is required',
             'life.required' => 'The life is required',
+            'weapon.required' => 'The weapon is required',
             'name.min' => 'The name must be at least :min characters',
             'name.max' => 'The name must be at most :max characters',
             'description.max' => 'The description must be at most :max characters',
