@@ -32,7 +32,7 @@
                         </div>
                         <a id="navbarDropdown"
                             class="d-flex flex-column align-items-center justify-content-center nav-link  fs-6"
-                            href="{{ route('admin.dashboard') }}">
+                            href="http://localhost:5174/">
 
                             {{ __('Game') }}
                         </a>
