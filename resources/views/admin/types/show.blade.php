@@ -25,7 +25,6 @@
                 <h5 class="m-0">Boosted stat: </h5>
                 <p>{{ $type->boosted_stat }}</p>
             </div>
-            prova
             <div class="d-flex mt-3">
                 <div class="mx-3">
                     <p>Base sprite </p>
