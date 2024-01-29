@@ -5,9 +5,6 @@
         </div>
         <ul class="navbar-nav ml-auto flex-row">
             <!-- Authentication Links -->
-            <li class="my-btn-hover my-btn d-flex  align-items-center justify-content-center w-auto px-4">
-                <a class="text-white p-0 my-auto" href="http://localhost:5174/"><i class="fa-solid fa-gamepad"></i></a>
-            </li>
             @guest
 
             @if(Route::currentRouteName() != 'login')
@@ -29,6 +26,17 @@
             @else
             <li id="user" class="nav-item dropdown">
                 <div class="d-flex align-items-center justify-content-between">
+                    <div class="me-3 d-flex flex-column align-items-center justify-content-center">
+                        <div class="my-user">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <a id="navbarDropdown"
+                            class="d-flex flex-column align-items-center justify-content-center nav-link  fs-6"
+                            href="{{ route('admin.dashboard') }}">
+
+                            {{ __('Game') }}
+                        </a>
+                    </div>
                     <div class="me-3 d-flex flex-column align-items-center justify-content-center">
                         <div class="my-user">
                             <i class="fa-solid fa-home"></i>
