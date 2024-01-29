@@ -27,7 +27,7 @@ class LoginController extends Controller
         }
         return response()->json([
             'status' => false,
-            'message' => 'Invalid email or password (or maybe you are the invalid one)'
+            'message' => 'Invalid email or password'
         ]);
     }
 }
