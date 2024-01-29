@@ -3,9 +3,13 @@
         <div class=" fst-italic">
             <h1>Boolck-Office Management</h1>
         </div>
-        <ul class="navbar-nav ml-auto ">
+        <ul class="navbar-nav ml-auto flex-row">
             <!-- Authentication Links -->
+            <li class="my-btn-hover my-btn d-flex  align-items-center justify-content-center w-auto px-4">
+                <a class="text-white p-0 my-auto" href="http://localhost:5174/"><i class="fa-solid fa-gamepad"></i></a>
+            </li>
             @guest
+
             @if(Route::currentRouteName() != 'login')
             <li class="my-btn-hover my-btn d-flex  align-items-center justify-content-center">
                 <a id="loginButton" class="text-white p-0 my-auto" href="{{ route('login') }}">{{
